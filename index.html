@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Todo Personalizado - Sublimación &amp; Grabado Láser Personalizado</title>         
+    
+    <!-- Font Awesome CDN para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->         
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0A1128',
+                        brandOrange: '#FF5A00',
+                        brandOrangeHover: '#E04F00',
+                        brandBlue: '#1D4ED8'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .Estilo2 { 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 18pt; 
+            font-style: italic; 
+            font-weight: bold; 
+            color: #FFFFFF; 
+        }
+        .Estilo3 { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+</head>     
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white relative"> 
+
+    <!-- 1. TOP BAR (COMPACTA EN CELULAR / COMPLETA EN DESKTOP) -->         
+    <div class="text-center px-3 py-1.5 font-semibold text-[11px] sm:text-xs text-white bg-brandOrange flex justify-center items-center gap-2 sm:gap-4">
+        <span>🚚 <strong>Envío GRATIS</strong> +$50.000</span>
+        <span class="hidden sm:inline">|</span>
+        <span class="hidden md:inline">⚡ Grabado en 24/48 hs</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/10 px-2 py-0.5 rounded-full transition">
+            <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52, Cruz del Eje
+        </a>
+    </div>         
+
+    <!-- 2. HEADER Y NAVEGACIÓN PRINCIPAL -->         
+    <header class="bg-brandDark text-white sticky top-0 z-40 shadow-lg border-b border-slate-800"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-4"> 
+            <!-- Logo + Nombre -->                 
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 shrink-0"> 
+                <img src="IMG-20260731-WA0095 (1).png" alt="Logo" width="100" height="100" class="h-8 sm:h-10 w-auto object-contain">
+                <span class="Estilo2 hidden sm:inline">Todo Personalizado</span>
+            </a>
+
+            <!-- Menú Principal (Oculto en celular, visible en Tablets/PC) -->                 
+            <nav class="hidden md:flex items-center gap-6 font-semibold text-xs uppercase tracking-wider text-slate-200"> 
+                <a href="index.html" class="text-brandOrange font-bold transition">Inicio</a> 
+                <a href="#catalogo" class="hover:text-brandOrange transition">Catálogo</a> 
+                <a href="#ubicacion" class="hover:text-brandOrange transition">Ubicación</a> 
+                <a href="#pasos" class="hover:text-brandOrange transition">Cómo Comprar</a> 
+                <a href="#corporativo" class="hover:text-brandOrange transition">Empresas</a> 
+            </nav>                 
+
+            <!-- Bloque de Acciones: Ubicación + Carrito -->                 
+            <div class="flex items-center gap-2">
+                <!-- Botón Ubicación -->
+                <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" title="Ver en Google Maps" class="bg-slate-800 hover:bg-slate-700 text-amber-400 p-2 sm:px-3 sm:py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 border border-slate-700 transition">
+                    <i class="fa-solid fa-location-dot text-sm"></i>
+                    <span class="hidden lg:inline text-white font-semibold">Alsina 52</span>
+                </a>
+
+                <!-- Botón Carrito -->
+                <button onclick="toggleCart()" class="relative bg-brandOrange hover:bg-brandOrangeHover text-white px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 shadow-md transition shrink-0">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                    <span class="hidden sm:inline">Mi Pedido</span>
+                    <span id="cart-count-badge" class="bg-white text-brandDark font-black text-[11px] px-1.5 sm:px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>                 
+      </div>             
+    </header>         
+
+    <!-- 3. HERO SECTION (ADAPTADO POR DISPOSITIVO) -->         
+    <section class="w-full bg-slate-100 border-b border-slate-200"> 
+        <div class="flex flex-col lg:flex-row w-full min-h-0 lg:min-h-[500px]"> 
+            <!-- COLUMNA IZQUIERDA -->                 
+            <div class="w-full lg:w-[60%] bg-brandDark text-white p-5 sm:p-10 lg:p-16 flex flex-col justify-center space-y-4 sm:space-y-6"> 
+                <div class="inline-flex items-center gap-1.5 bg-slate-800/90 border border-slate-700 text-slate-200 px-2.5 py-1 rounded-full text-[11px] sm:text-xs font-semibold w-fit"> 
+                    <span class="text-emerald-400 font-bold">✓</span> Grabado Láser &amp; Sublimación
+                </div>                     
+                <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight"> 
+                    Hacemos único lo que usás todos los días. 
+                </h1> 
+                
+                <!-- Versión Simplificada para Celulares -->
+                <p class="block sm:hidden text-slate-300 text-xs leading-relaxed">
+                    Termos, mates y vasos con grabado láser, e indumentaria con sublimación full color.
+                </p>
+                <!-- Versión Completa para Computadoras / Tablets -->
+                <p class="hidden sm:block text-slate-300 text-sm sm:text-base leading-relaxed"> 
+                    Personalizamos termos, mates, vasos térmicos con grabado láser de máxima precisión, e indumentaria con sublimación full color. Diseños exclusivos para vos o tu empresa. 
+                </p> 
+
+                <div class="flex flex-wrap gap-3 pt-1 sm:pt-2"> 
+                    <a href="#catalogo" class="flex-1 sm:flex-none text-center bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold px-5 sm:px-7 py-3 sm:py-4 rounded-xl text-xs uppercase tracking-wider shadow-lg transition"> 
+                        <i class="fa-solid fa-grip mr-1"></i> Ver Catálogo 
+                    </a> 
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado" target="_blank" class="flex-1 sm:flex-none text-center border border-slate-600 hover:border-white text-white font-bold px-4 sm:px-6 py-3 sm:py-4 rounded-xl text-xs uppercase transition flex items-center justify-center gap-1.5"> 
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-base"></i> WhatsApp 
+                    </a> 
+                </div>                     
+            </div>                 
+            <!-- COLUMNA DERECHA (IMÁGENES) -->                 
+            <div class="w-full lg:w-[40%] bg-white p-4 sm:p-8 grid grid-cols-2 gap-3 sm:gap-4 items-center justify-center"> 
+                <div class="relative h-36 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-sm group"> 
+                    <img src="1.png" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-2 left-2 bg-brandDark/85 text-white text-[9px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-slate-700 shadow-md"> Sublimación </div>
+                </div>
+                <div class="relative h-36 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-sm group">
+                    <img src="AdobeExpressPhotos_cbf702b0a7554df5bebf6bceee576b79_CopyEdited.png" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-2 left-2 bg-brandDark/85 text-white text-[9px] sm:text-[11px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border border-slate-700 shadow-md"> Grabado Láser </div>
+                </div>
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 4. FRANJA DE BENEFICIOS -->         
+    <section class="bg-white py-4 sm:py-8 border-b border-slate-200 shadow-sm"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6"> 
+            <div class="flex items-center gap-2.5 p-1"> 
+                <div class="text-brandOrange text-xl sm:text-2xl"><i class="fa-solid fa-palette"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-[11px] sm:text-xs text-slate-900">Diseño Personalizado</h4> 
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 hidden sm:block">Grabamos tu logo o frase</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-2.5 p-1"> 
+                <div class="text-emerald-500 text-xl sm:text-2xl"><i class="fa-solid fa-bolt-lightning"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-[11px] sm:text-xs text-slate-900">Listos en 24/48 hs</h4> 
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 hidden sm:block">Producción ultrarrápida</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-2.5 p-1"> 
+                <div class="text-brandOrange text-xl sm:text-2xl"><i class="fa-solid fa-shield-halved"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-[11px] sm:text-xs text-slate-900">Calidad Premium</h4> 
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 hidden sm:block">Materiales inoxidables</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-2.5 p-1"> 
+                <div class="text-emerald-500 text-xl sm:text-2xl"><i class="fa-solid fa-truck-fast"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-[11px] sm:text-xs text-slate-900">Envíos a Todo el País</h4> 
+                    <p class="text-[10px] sm:text-[11px] text-slate-500 hidden sm:block">Directo a tu domicilio</p> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 5. SECCIÓN CATÁLOGO E-COMMERCE INTEGRADO -->         
+    <section id="catalogo" class="py-8 sm:py-14 bg-slate-50 border-b border-slate-200 scroll-mt-16 sm:scroll-mt-20"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <!-- Encabezado del Catálogo -->
+            <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8"> 
+                <span class="text-brandOrange font-bold text-[11px] sm:text-xs uppercase tracking-wider">Catálogo Interactivo</span> 
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-0.5 sm:mt-1">Elegí y Armá tu Pedido</h2> 
+            </div>                 
+
+            <!-- Barra de Búsqueda y Filtros -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3 mb-6 sm:mb-8 bg-white p-3 sm:p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <!-- Buscador -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-slate-400 text-xs sm:text-sm"></i>
+                    <input type="text" id="search-input" oninput="filterProducts()" placeholder="Buscar producto..." class="w-full pl-9 pr-4 py-1.5 sm:py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-brandOrange transition">
+                </div>
+
+                <!-- Botones Categorías -->
+                <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 w-full md:w-auto justify-center" id="category-buttons">
+                    <button onclick="setCategory('all')" class="cat-btn active bg-brandDark text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition">Todos</button>
+                    <button onclick="setCategory('termos')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition">Termos</button>
+                    <button onclick="setCategory('mates')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition">Mates</button>
+                    <button onclick="setCategory('textil')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition">Textil</button>
+                    <button onclick="setCategory('gorras')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold transition">Gorras</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Productos (2 columnas en móviles pequeños, 4 en escritorio) -->                 
+            <div id="products-grid" class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6"> 
+                <!-- Render dinámico JavaScript -->
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 6. SECCIÓN UBICACIÓN COMPACTA -->
+    <section id="ubicacion" class="py-5 bg-white border-b border-slate-200 scroll-mt-16 sm:scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-3.5 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-3">
+                
+                <!-- Datos Rápidos -->
+                <div class="flex flex-row items-center gap-3 text-left">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-base sm:text-lg font-bold shrink-0">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-extrabold text-xs sm:text-sm text-slate-900">Local Comercial</h3>
+                            <span class="bg-emerald-100 text-emerald-700 text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full">Retiro Gratis</span>
+                        </div>
+                        <p class="text-[11px] sm:text-xs text-slate-600 mt-0.5">
+                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> <strong>Alsina 52</strong>, Cruz del Eje 
+                            <span class="hidden sm:inline text-slate-400">|</span> 
+                            <span class="hidden sm:inline text-slate-500">Lun a Vie 9-13 / 17-21 hs</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Botón Abrir Mapa -->
+                <div class="shrink-0 w-full md:w-auto">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="w-full md:w-auto inline-flex items-center justify-center gap-2 bg-brandDark hover:bg-slate-800 text-white font-bold text-xs px-4 py-2 rounded-xl shadow-sm transition">
+                        <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+                        <span>Abrir en Google Maps</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECCIÓN CÓMO COMPRAR -->         
+    <section id="pasos" class="py-8 sm:py-14 bg-slate-50 border-b border-slate-200"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <div class="text-center max-w-2xl mx-auto mb-8 sm:mb-12"> 
+                <span class="text-brandOrange font-bold text-xs uppercase tracking-wider">Fácil y Rápido</span> 
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">¿Cómo comprar?</h2> 
+            </div>                 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-8 max-w-5xl mx-auto"> 
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-xl sm:text-2xl font-black mb-3 sm:mb-4">1</div>                         
+                    <h3 class="font-extrabold text-sm sm:text-base text-slate-900 mb-1">Elegí tu Producto</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Seleccioná los productos que te gusten en el catálogo interactivo.</p> 
+                </div>                     
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-xl sm:text-2xl font-black mb-3 sm:mb-4">2</div>                         
+                    <h3 class="font-extrabold text-sm sm:text-base text-slate-900 mb-1">Envianos tu Idea</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Envía la orden por WhatsApp indicando el texto o grabado que querés.</p> 
+                </div>                     
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-12 h-12 sm:w-16 sm:h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-xl sm:text-2xl font-black mb-3 sm:mb-4">3</div>                         
+                    <h3 class="font-extrabold text-sm sm:text-base text-slate-900 mb-1">¡Recibilo o Retiralo!</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Retiralo por Alsina 52 o te lo enviamos directamente a tu domicilio.</p> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 8. SECCIÓN CORPORATIVA B2B -->         
+    <section id="corporativo" class="py-8 sm:py-14 bg-slate-900 text-white"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <div class="bg-brandDark rounded-3xl p-6 sm:p-12 border border-slate-800 shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-6 sm:gap-8 items-center"> 
+                <div class="md:col-span-7 space-y-3 sm:space-y-4"> 
+                    <span class="bg-brandOrange text-white font-bold text-[9px] sm:text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider">Ventas Mayoristas</span> 
+                    <h2 class="text-xl sm:text-4xl font-extrabold leading-tight"> 
+                        Merchandising Empresarial 
+                    </h2> 
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed"> 
+                        Kits materos, vasos grabados e indumentaria institucional con el logo de tu empresa. Precios especiales por mayor.
+                    </p> 
+                    <div class="pt-1"> 
+                        <a href="https://wa.me/5493549430437?text=Hola!%20Necesito%20un%20presupuesto%20mayorista%20para%20mi%20empresa" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs px-5 py-3 rounded-xl shadow-lg transition"> 
+                            <i class="fa-brands fa-whatsapp text-base"></i> Presupuesto Mayorista 
+                        </a> 
+                    </div>                         
+                </div>                     
+                <div class="md:col-span-5 flex justify-center hidden sm:flex"> 
+                    <img src="1000726273_279e7d3885c21b9fd7e10cfc9fe0b047-4_8_2026, 01_02_50.jpg" alt="Merchandising B2B" class="rounded-2xl shadow-xl border border-slate-700 max-h-56 object-cover"> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 9. FOOTER -->         
+    <footer class="bg-brandDark text-slate-400 py-8 sm:py-12 border-t border-slate-800 text-xs"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 sm:space-y-8"> 
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"> 
+                <div class="space-y-2"> 
+                    <div class="flex items-center gap-2 font-black text-lg text-white"> 
+                        <span class="Estilo3">Todo Personalizado</span> 
+                    </div>                         
+                    <p class="text-slate-400 text-[11px] leading-relaxed">Grabado láser de alta precisión y sublimación textil.</p> 
+                </div>                     
+                <div class="space-y-1.5 hidden sm:block"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Navegación</h4> 
+                    <p><a href="index.html" class="hover:text-white transition">Inicio</a></p> 
+                    <p><a href="#catalogo" class="hover:text-white transition">Catálogo</a></p> 
+                    <p><a href="#ubicacion" class="hover:text-white transition">Ubicación</a></p> 
+                </div>                     
+                <div class="space-y-1.5"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Contacto</h4> 
+                    <p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:text-white transition">
+                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> Alsina 52, Cruz del Eje
+                        </a>
+                    </p> 
+                    <p><i class="fa-brands fa-whatsapp text-emerald-400 mr-1"></i> +54 9 3549 43 0437</p> 
+                </div>                     
+                <div class="space-y-1.5"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Pagos</h4> 
+                    <p class="text-[11px] text-slate-400">Mercado Pago, transferencias y tarjetas.</p> 
+                    <div class="flex gap-2 text-lg text-slate-300 pt-1"> 
+                        <i class="fa-brands fa-cc-visa"></i> 
+                        <i class="fa-brands fa-cc-mastercard"></i> 
+                        <i class="fa-solid fa-qrcode"></i> 
+                    </div>                         
+                </div>                     
+            </div>                 
+            <div class="pt-6 border-t border-slate-800 text-center text-[10px] sm:text-[11px] text-slate-500"> 
+                &copy; 2026 Todo Personalizado - Todos los derechos reservados.
+            </div>                 
+        </div>             
+    </footer>         
+
+    <!-- 10. CARRITO SLIDE-OVER -->
+    <div id="cart-drawer-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-4 bg-brandDark text-white flex items-center justify-between border-b border-slate-800">
+            <div class="flex items-center gap-2 font-extrabold text-sm">
+                <i class="fa-solid fa-cart-shopping text-brandOrange"></i>
+                <span>Mi Pedido</span>
+            </div>
+            <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-lg px-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-4">
+            <!-- Render dinámico -->
+        </div>
+
+        <div class="p-4 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div>
+                <label for="custom-note" class="block text-[11px] font-bold text-slate-700 mb-1">
+                    <i class="fa-solid fa-pen-nib text-brandOrange mr-1"></i> Texto / Nombre / Logo a Grabar:
+                </label>
+                <textarea id="custom-note" rows="2" placeholder="Ej: Grabar 'Gonzalo' en el termo..." class="w-full p-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brandOrange"></textarea>
+            </div>
+
+            <div class="flex justify-between items-center text-slate-900 font-extrabold text-sm pt-1 border-t border-slate-200">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price" class="text-base text-brandOrange">$0</span>
+            </div>
+
+            <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs py-3 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Enviar Pedido a WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- WIDGET FLOTANTE WHATSAPP -->         
+    <a href="https://wa.me/5493549430437?text=Hola!%20Tengo%20una%20consulta%20sobre%20un%20producto" target="_blank" class="fixed bottom-4 right-4 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-2xl flex items-center justify-center text-xl sm:text-2xl transition transform hover:scale-110"> 
+        <i class="fa-brands fa-whatsapp"></i> 
+    </a> 
+
+    <!-- 11. JAVASCRIPT DEL CARRITO Y TIENDA -->
+    <script>
+        const products = [
+            { id: 1, name: "Termo Acero Inoxidable 1L", category: "termos", badge: "Grabado Láser", price: 28500, desc: "Mantiene el frío/calor 24hs. Incluye grabado personalizado.", image: "image-0 (2).jpg" },
+            { id: 2, name: "Mate Térmico con Bombilla", category: "mates", badge: "Grabado Láser", price: 19500, desc: "Doble capa de acero. Personalizado con tu nombre o logo.", image: "IMG-20260803-WA0100.jpg" },
+            { id: 3, name: "Remera Deportiva Sublimada", category: "textil", badge: "Sublimación", price: 14800, desc: "Estampado full color indeleble. Ideal para equipos.", image: "D_781602-MLA108862516677_032026-C.jpg" },
+            { id: 4, name: "Gorra Trucker Personalizada", category: "gorras", badge: "Sublimación", price: 8500, desc: "Excelente calce y terminación. Personalizá el frente.", image: "1000726263_1081760263c76fed835dd75796624d21-4_8_2026, 01_03_29.jpg" },
+            { id: 5, name: "Vaso Térmico Stainless Steel", category: "termos", badge: "Grabado Láser", price: 16200, desc: "Con tapa hermética y grabado personalizado sin cargo.", image: "AdobeExpressPhotos_cbf702b0a7554df5bebf6bceee576b79_CopyEdited.png" },
+            { id: 6, name: "Mate Camionero Calabaza", category: "mates", badge: "Alpaca Cincelada", price: 22000, desc: "Virola de alpaca grabada a mano con tu diseño.", image: "1.png" }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        document.addEventListener('DOMContentLoaded', () => { renderProducts(); });
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-brandDark', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-brandDark', 'text-white');
+            filterProducts();
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('products-grid');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+
+            const filtered = products.filter(p => {
+                const matchCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.desc.toLowerCase().includes(searchVal);
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-8 text-slate-400">
+                        <i class="fa-solid fa-box-open text-3xl mb-2"></i>
+                        <p class="text-xs font-semibold">No hay productos en esta categoría.</p>
+                    </div>`;
+                return;
+            }
+
+            // Oculta la descripción detallada 'p.desc' en pantallas pequeñas (hidden sm:block) para tarjetas ultracompactas en celular
+            container.innerHTML = filtered.map(p => `
+                <div class="bg-white rounded-2xl p-2.5 sm:p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition group"> 
+                    <div> 
+                        <div class="h-32 sm:h-48 bg-slate-50 rounded-xl mb-2 sm:mb-3 overflow-hidden border border-slate-100 relative">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>                             
+                        <span class="text-[9px] sm:text-[10px] font-bold text-brandOrange uppercase tracking-wider block">${p.badge}</span> 
+                        <h3 class="font-bold text-xs text-slate-900 mt-0.5 leading-snug line-clamp-2">${p.name}</h3> 
+                        <p class="text-[11px] text-slate-500 my-2 hidden sm:block">${p.desc}</p> 
+                    </div>                         
+                    <div class="mt-2"> 
+                        <span class="text-sm sm:text-base font-black text-slate-900 block mb-2">$${p.price.toLocaleString('es-AR')}</span> 
+                        <button onclick="addToCart(${p.id})" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-[11px] sm:text-xs py-2 rounded-xl shadow transition text-center flex items-center justify-center gap-1"> 
+                            <i class="fa-solid fa-plus text-[10px]"></i> <span>Agregar</span>
+                        </button> 
+                    </div>                         
+                </div>
+            `).join('');
+        }
+
+        function filterProducts() { renderProducts(); }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const exist = cart.find(item => item.id === id);
+            if (exist) { exist.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
+            }
+            updateCartUI();
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-count-badge').innerText = totalQty;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-slate-400 text-center p-6">
+                        <i class="fa-solid fa-cart-flatbed text-4xl mb-2 text-slate-300"></i>
+                        <p class="text-xs font-bold text-slate-600">Tu carrito está vacío</p>
+                    </div>`;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 bg-slate-50 p-2.5 rounded-xl border border-slate-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-10 h-10 rounded-lg object-cover border border-slate-200">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-900 truncate">${item.name}</h4>
+                            <p class="text-[10px] text-slate-500">$${item.price.toLocaleString('es-AR')}</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 bg-white border border-slate-300 rounded text-slate-700 font-bold text-xs flex items-center justify-center hover:bg-slate-100">-</button>
+                                <span class="text-xs font-bold text-slate-800">${item.qty}</span>
+                                <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 bg-white border border-slate-300 rounded text-slate-700 font-bold text-xs flex items-center justify-center hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-bold text-xs text-slate-900 block">$${(item.price * item.qty).toLocaleString('es-AR')}</span>
+                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 text-xs mt-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>`).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('cart-total-price').innerText = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const backdrop = document.getElementById('cart-drawer-backdrop');
+            if (forceOpen || drawer.classList.contains('translate-x-full')) {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('hidden');
+            }
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Agregá al menos un producto al pedido antes de enviar.");
+                return;
+            }
+
+            const phone = "5493549430437";
+            let message = "👋 *¡Hola! Quiero realizar un pedido desde la web:*\n\n";
+
+            cart.forEach((item, idx) => {
+                message += `*${idx + 1}. ${item.name}*\n`;
+                message += `   • Cantidad: ${item.qty}\n`;
+                message += `   • Precio Unitario: $${item.price.toLocaleString('es-AR')}\n`;
+                message += `   • Subtotal: $${(item.price * item.qty).toLocaleString('es-AR')}\n\n`;
+            });
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
+
+            const note = document.getElementById('custom-note').value.trim();
+            if (note) {
+                message += `✍️ *Detalles / Grabado Personalizado:*\n"${note}"\n\n`;
+            }
+
+            message += "Quedo a la espera para coordinar el pago y envío. ¡Muchas gracias!";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
