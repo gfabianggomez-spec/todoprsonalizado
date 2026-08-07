@@ -1,11 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <title>Todo Personalizado - Sublimación &amp; Grabado Láser Personalizada</title>         
-        <!-- Tailwind CSS CDN -->         
-        <script>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Todo Personalizado - Sublimación &amp; Grabado Láser Personalizado</title>         
+    
+    <!-- Font Awesome CDN para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->         
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
         tailwind.config = {
             theme: {
                 extend: {
@@ -21,307 +31,514 @@
                 }
             }
         }
-    </script>         
-        <style type="text/css">
-        <!--
-.Estilo1 { font-family: "Courier New", Courier, monospace; font-weight: bold; font-style: italic; } .Estilo2 { font-family: Arial, Helvetica, sans-serif; font-size: 18pt; font-style: italic; font-weight: bold; line-height: normal; color: #FFFFFF; } .Estilo3 { font-family: Arial, Helvetica, sans-serif; }
---></style>         
-        <style>
-        *, ::before, ::after { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; } ::backdrop { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; --tw-contain-size: ; --tw-contain-layout: ; --tw-contain-paint: ; --tw-contain-style: ; } /* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*, ::after, ::before { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; } ::after, ::before { --tw-content: ''; } :host, html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: Montserrat, sans-serif; font-feature-settings: normal; font-variation-settings: normal; -webkit-tap-highlight-color: transparent; } body { margin: 0; line-height: inherit; } hr { height: 0; color: inherit; border-top-width: 1px; } abbr:where([title]) { -webkit-text-decoration: underline dotted; text-decoration: underline dotted; } h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; } a { color: inherit; text-decoration: inherit; } b, strong { font-weight: bolder; } code, kbd, pre, samp { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; font-feature-settings: normal; font-variation-settings: normal; font-size: 1em; } small { font-size: 80%; } sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; } sub { bottom: -.25em; } sup { top: -.5em; } table { text-indent: 0; border-color: inherit; border-collapse: collapse; } button, input, optgroup, select, textarea { font-family: inherit; font-feature-settings: inherit; font-variation-settings: inherit; font-size: 100%; font-weight: inherit; line-height: inherit; letter-spacing: inherit; color: inherit; margin: 0; padding: 0; } button, select { text-transform: none; } button, input:where([type=button]), input:where([type=reset]), input:where([type=submit]) { -webkit-appearance: button; background-color: transparent; background-image: none; } :-moz-focusring { outline: auto; } :-moz-ui-invalid { box-shadow: none; } progress { vertical-align: baseline; } ::-webkit-inner-spin-button, ::-webkit-outer-spin-button { height: auto; } [type=search] { -webkit-appearance: textfield; outline-offset: -2px; } ::-webkit-search-decoration { -webkit-appearance: none; } ::-webkit-file-upload-button { -webkit-appearance: button; font: inherit; } summary { display: list-item; } blockquote, dd, dl, figure, h1, h2, h3, h4, h5, h6, hr, p, pre { margin: 0; } fieldset { margin: 0; padding: 0; } legend { padding: 0; } menu, ol, ul { list-style: none; margin: 0; padding: 0; } dialog { padding: 0; } textarea { resize: vertical; } input::placeholder, textarea::placeholder { opacity: 1; color: #9ca3af; } [role=button], button { cursor: pointer; } :disabled { cursor: default; } audio, canvas, embed, iframe, img, object, svg, video { display: block; vertical-align: middle; } img, video {
-	max-width: 100%;
-	height: 80pt;
-	width: 120pt;
-} [hidden]:where(:not([hidden=until-found])) { display: none; } .fixed { position: fixed; } .absolute { position: absolute; } .relative { position: relative; } .sticky { position: sticky; } .top-0 { top: 0px; } .bottom-5 { bottom: 1.25rem; } .right-3 { right: 0.75rem; } .right-5 { right: 1.25rem; } .top-3 { top: 0.75rem; } .z-50 { z-index: 50; } .mx-2 { margin-left: 0.5rem; margin-right: 0.5rem; } .mx-auto { margin-left: auto; margin-right: auto; } .my-2 { margin-top: 0.5rem; margin-bottom: 0.5rem; } .mb-10 { margin-bottom: 2.5rem; } .mb-12 { margin-bottom: 3rem; } .mb-2 { margin-bottom: 0.5rem; } .mb-3 { margin-bottom: 0.75rem; } .mb-4 { margin-bottom: 1rem; } .mr-1 { margin-right: 0.25rem; } .mt-1 { margin-top: 0.25rem; } .block { display: block; } .flex { display: flex; } .inline-flex { display: inline-flex; } .grid { display: grid; } .hidden { display: none; } .aspect-square { aspect-ratio: 1 / 1; } .h-20 { height: 5rem; } .h-14 { height: 3.5rem; } .h-16 { height: 4rem; } .h-48 {
-	height: 12rem;
-	position: relative;
-} .h-full { height: 100%; } .max-h-64 { max-height: 16rem; } .min-h-\[520px\] { min-height: 520px; } .w-14 { width: 3.5rem; } .w-16 { width: 4rem; } .w-fit { width: -moz-fit-content; width: fit-content; } .w-full { width: 90%; } .max-w-7xl { max-width: 80rem; } .max-w-2xl { max-width: 42rem; } .max-w-5xl { max-width: 64rem; } .transform { transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); } .grid-cols-1 {
-	grid-template-columns: repeat(1, minmax(0, 1fr));
-	font-size: 24px;
-} .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .flex-col { flex-direction: column; } .flex-wrap { flex-wrap: wrap; } .items-start { align-items: flex-start; } .items-center { align-items: center; } .justify-center { justify-content: center; } .justify-between { justify-content: space-between; background-color: #00003E; } .gap-2 { gap: 0.5rem; } .gap-6 { gap: 1.5rem; } .gap-1 { gap: 0.25rem; } .gap-3 { gap: 0.75rem; } .gap-4 { gap: 1rem; } .gap-8 { gap: 2rem; } .space-y-2 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)); } .space-y-3 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(0.75rem * var(--tw-space-y-reverse)); } .space-y-4 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(1rem * var(--tw-space-y-reverse)); } .space-y-6 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)); } .space-y-8 > :not([hidden]) ~ :not([hidden]) { --tw-space-y-reverse: 0; margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse))); margin-bottom: calc(2rem * var(--tw-space-y-reverse)); } .overflow-hidden { overflow: hidden; } .rounded-2xl { border-radius: 1rem; } .rounded-3xl { border-radius: 1.5rem; } .rounded-full { border-radius: 9999px; } .rounded-xl { border-radius: 0.75rem; font-variant: normal; vertical-align: bottom; } .border { border-width: 1px; } .border-b { border-bottom-width: 1px; } .border-l { border-left-width: 1px; } .border-t { border-top-width: 1px; } .border-slate-800 { --tw-border-opacity: 1; border-color: rgb(30 41 59 / var(--tw-border-opacity, 1)); } .border-slate-200 { --tw-border-opacity: 1; border-color: rgb(226 232 240 / var(--tw-border-opacity, 1)); } .border-slate-600 { --tw-border-opacity: 1; border-color: rgb(71 85 105 / var(--tw-border-opacity, 1)); } .border-slate-700 { --tw-border-opacity: 1; border-color: rgb(51 65 85 / var(--tw-border-opacity, 1)); } .bg-brandDark { --tw-bg-opacity: 1; background-color: rgb(10 17 40 / var(--tw-bg-opacity, 1)); } .bg-brandOrange { --tw-bg-opacity: 1; background-color: rgb(255 90 0 / var(--tw-bg-opacity, 1)); } .bg-slate-50 { --tw-bg-opacity: 1; background-color: rgb(248 250 252 / var(--tw-bg-opacity, 1)); } .bg-emerald-500 { --tw-bg-opacity: 1; background-color: rgb(16 185 129 / var(--tw-bg-opacity, 1)); } .bg-orange-100 { --tw-bg-opacity: 1; background-color: rgb(255 237 213 / var(--tw-bg-opacity, 1)); } .bg-slate-100 { --tw-bg-opacity: 1; background-color: rgb(241 245 249 / var(--tw-bg-opacity, 1)); } .bg-slate-800\/90 { background-color: rgb(30 41 59 / 0.9); } .bg-slate-900 { --tw-bg-opacity: 1; background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1)); } .bg-white { --tw-bg-opacity: 1; background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1)); } .object-cover { object-fit: cover; } .p-2 { padding: 0.5rem; } .p-4 { padding: 1rem; } .p-6 { padding: 1.5rem; } .p-8 { padding: 2rem; } .px-4 { padding-left: 1rem; padding-right: 1rem; } .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; } .px-3 { padding-left: 0.75rem; padding-right: 0.75rem; } .px-5 { padding-left: 1.25rem; padding-right: 1.25rem; } .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; } .px-7 { padding-left: 1.75rem; padding-right: 1.75rem; } .py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; } .py-1\.5 { padding-top: 0.375rem; padding-bottom: 0.375rem; } .py-12 { padding-top: 3rem; padding-bottom: 3rem; } .py-14 { padding-top: 3.5rem; padding-bottom: 3.5rem; } .py-2\.5 { padding-top: 0.625rem; padding-bottom: 0.625rem; } .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; } .py-3\.5 { padding-top: 0.875rem; padding-bottom: 0.875rem; } .py-4 { padding-top: 1rem; padding-bottom: 1rem; } .py-8 { padding-top: 2rem; padding-bottom: 2rem; } .pt-2 { padding-top: 0.5rem; } .pt-8 { padding-top: 2rem; } .text-center { text-align: center; } .font-sans { font-family: Montserrat, sans-serif; } .text-2xl { font-size: 1.5rem; line-height: 2rem; } .text-xs { font-size: 0.75rem; line-height: 1rem; } .text-3xl { font-size: 1.875rem; line-height: 2.25rem; } .text-\[10px\] { font-size: 10px; } .text-\[11px\] { font-size: 11px; } .text-base { font-size: 1rem; line-height: 1.5rem; } .text-lg { font-size: 1.125rem; line-height: 1.75rem; } .text-sm { font-size: 0.875rem; line-height: 1.25rem; } .text-xl { font-size: 1.25rem; line-height: 1.75rem; } .font-black { font-weight: 900; } .font-bold { font-weight: 700; } .font-semibold { font-weight: 900; } .font-extrabold { font-weight: 900; } .uppercase { text-transform: uppercase; } .leading-relaxed { line-height: 1.625; } .leading-snug { line-height: 1.375; } .leading-tight { line-height: 1.25; } .tracking-wider { letter-spacing: 0.05em; } .tracking-tight { letter-spacing: -0.025em; } .tracking-widest { letter-spacing: 0.1em; } .text-brandOrange { --tw-text-opacity: 1; color: rgb(255 90 0 / var(--tw-text-opacity, 1)); } .text-slate-200 { --tw-text-opacity: 1; color: rgb(226 232 240 / var(--tw-text-opacity, 1)); } .text-slate-800 { --tw-text-opacity: 1; color: rgb(30 41 59 / var(--tw-text-opacity, 1)); } .text-white { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); } .text-brandDark { --tw-text-opacity: 1; color: rgb(10 17 40 / var(--tw-text-opacity, 1)); } .text-emerald-400 { --tw-text-opacity: 1; color: rgb(52 211 153 / var(--tw-text-opacity, 1)); } .text-emerald-500 { --tw-text-opacity: 1; color: rgb(16 185 129 / var(--tw-text-opacity, 1)); } .text-slate-300 { --tw-text-opacity: 1; color: rgb(203 213 225 / var(--tw-text-opacity, 1)); } .text-slate-400 { --tw-text-opacity: 1; color: rgb(148 163 184 / var(--tw-text-opacity, 1)); } .text-slate-500 { --tw-text-opacity: 1; color: rgb(100 116 139 / var(--tw-text-opacity, 1)); } .text-slate-900 { --tw-text-opacity: 1; color: rgb(15 23 42 / var(--tw-text-opacity, 1)); } .antialiased { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .shadow-lg { --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow { --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow-2xl { --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow-md { --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow-sm { --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow-xl { --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .shadow-orange-500\/20 { --tw-shadow-color: rgb(249 115 22 / 0.2); --tw-shadow: var(--tw-shadow-colored); } .transition { transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; } .duration-500 { transition-duration: 500ms; } .selection\:bg-brandOrange *::selection { --tw-bg-opacity: 1; background-color: rgb(255 90 0 / var(--tw-bg-opacity, 1)); } .selection\:text-white *::selection { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); } .selection\:bg-brandOrange::selection { --tw-bg-opacity: 1; background-color: rgb(255 90 0 / var(--tw-bg-opacity, 1)); } .selection\:text-white::selection { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); } .hover\:scale-110:hover { --tw-scale-x: 1.1; --tw-scale-y: 1.1; transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); } .hover\:border-white:hover { --tw-border-opacity: 1; border-color: rgb(255 255 255 / var(--tw-border-opacity, 1)); } .hover\:bg-brandDark:hover { --tw-bg-opacity: 1; background-color: rgb(10 17 40 / var(--tw-bg-opacity, 1)); } .hover\:bg-brandOrangeHover:hover { --tw-bg-opacity: 1; background-color: rgb(224 79 0 / var(--tw-bg-opacity, 1)); } .hover\:bg-emerald-600:hover { --tw-bg-opacity: 1; background-color: rgb(5 150 105 / var(--tw-bg-opacity, 1)); } .hover\:text-brandOrange:hover { --tw-text-opacity: 1; color: rgb(255 90 0 / var(--tw-text-opacity, 1)); } .hover\:text-white:hover { --tw-text-opacity: 1; color: rgb(255 255 255 / var(--tw-text-opacity, 1)); } .hover\:shadow-md:hover { --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color); box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); } .group:hover .group-hover\:scale-105 { --tw-scale-x: 1.05; --tw-scale-y: 1.05; transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)); } @media (min-width: 640px){ .sm\:inline {  display: inline; }  .sm\:grid-cols-2 {  grid-template-columns: repeat(2, minmax(0, 1fr)); }  .sm\:flex-row {  flex-direction: row; }  .sm\:items-end {  align-items: flex-end; }  .sm\:p-12 {  padding: 3rem; }  .sm\:px-6 {  padding-left: 1.5rem;  padding-right: 1.5rem; }  .sm\:text-4xl {  font-size: 2.25rem;  line-height: 2.5rem; }  .sm\:text-5xl {  font-size: 3rem;  line-height: 1; }  .sm\:text-base {  font-size: 1rem;  line-height: 1.5rem; }  .sm\:text-sm {  font-size: 0.875rem;  line-height: 1.25rem; } } @media (min-width: 768px){ .md\:col-span-5 {  grid-column: span 5 / span 5; }  .md\:col-span-7 {  grid-column: span 7 / span 7; }  .md\:flex {  display: flex; }  .md\:grid-cols-12 {  grid-template-columns: repeat(12, minmax(0, 1fr)); }  .md\:grid-cols-3 {  grid-template-columns: repeat(3, minmax(0, 1fr)); }  .md\:grid-cols-4 {  grid-template-columns: repeat(4, minmax(0, 1fr)); } } @media (min-width: 1024px){ .lg\:col-span-4 {  grid-column: span 4 / span 4; }  .lg\:col-span-6 {  grid-column: span 6 / span 6; }  .lg\:grid-cols-10 {  grid-template-columns: repeat(10, minmax(0, 1fr));  display: grid; }  .lg\:grid-cols-4 {  grid-template-columns: repeat(4, minmax(0, 1fr)); }  .lg\:p-16 {  padding: 4rem; }  .lg\:px-8 {  padding-left: 2rem;  padding-right: 2rem; } } .object-cover1 { object-fit: cover; } .duration-5001 { transition-duration: 500ms; } .object-cover2 { object-fit: cover; } .transition1 { transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; } .duration-5002 { transition-duration: 500ms; } .object-cover3 { object-fit: cover; } .transition2 { transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; } .duration-5003 { transition-duration: 500ms; } .object-cover4 { object-fit: cover; } .transition3 { transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }.duration-5004 {transition-duration: 500ms; }
-.object-cover5 {object-fit: cover; }
-.rounded-2xl1 {border-radius: 1rem; }
-.transition4 {transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        .object-cover6 {object-fit: cover; }
-        .object-cover7 {object-fit: cover; }
-        .duration-5005 {transition-duration: 500ms; }
-.object-cover8 {object-fit: cover; }
-.transition5 {transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        .duration-5006 {transition-duration: 500ms; }
-.object-cover9 {object-fit: cover; }
-.transition6 {transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        .duration-5007 {transition-duration: 500ms; }
-.object-cover10 {object-fit: cover; }
-.transition7 {transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter; transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-        </style>         
-    </head>     
-    <body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white" style="text-align: left; font-size: 3px; color: #080808;"> 
-        <!-- 1. TOP BAR -->         
-        <div class="text-center px-4 py-2 font-semibold text-xs text-white bg-brandOrange">
-            <em>      🚚 <strong>Envío GRATIS</strong> en compras superiores a $50.000 <span class="mx-2 hidden sm:inline">|</span> <span class="hidden sm:inline">&#9889; Grabado e impresión en 24/48 h</span></em>
-        </div>         
-        <!-- 2. HEADER Y NAVEGACIÓN PRINCIPAL -->         
-        <header class="bg-brandDark text-white sticky top-0 z-50 shadow-lg border-b border-slate-800"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"> 
-                <!-- Espacio preparado para Logo + Nombre con tipografía a elección -->                 
-                <a href="index.html" class="flex items-center gap-3"> 
-                    <img src="IMG-20260731-WA0095 (1).png" alt="Logo" width="82%" height="53%" class="h-10 w-auto object-contain">
-                    <span class="Estilo2">Todo Personalizado </span>                </a>
-                <!-- Menú Principal con Enlaces -->                 
-                <nav class="hidden md:flex items-center gap-6 font-semibold text-xs uppercase tracking-wider text-slate-200"> 
-                    <a href="index.html" class="text-brandOrange font-bold transition">Inicio</a> 
-                    <a href="catalogo.html" class="hover:text-brandOrange transition">Catálogo Completo</a> 
-                    <a href="index.html#lo-mas-vendido" class="hover:text-brandOrange transition">Lo Más Vendido</a> 
-                    <a href="index.html#pasos" class="hover:text-brandOrange transition">Cómo Comprar</a> 
-                    <a href="index.html#corporativo" class="hover:text-brandOrange transition">Empresas</a> 
-                </nav>                 
-                <!-- Botones de Acción -->                 
-                <div class="flex items-center gap-3"></div>                 
-          </div>             
-        </header>         
-        <!-- 3. HERO SECTION - DIVISIÓN 60% AZUL OSCURO / 40% BLANCO -->         
-        <section class="w-full bg-slate-100 border-b border-slate-200"> 
-            <div class="grid grid-cols-1 lg:grid-cols-10 max-w-7xl min-h-[520px] mx-auto"> 
-                <!-- COLUMNA IZQUIERDA: 60% ANCHO (Fondo Azul Oscuro #0A1128) -->                 
-                <div class="lg:col-span-6 bg-brandDark text-white p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6" style="grid-area: auto / / auto / 10;"> 
-                    <div class="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700 text-slate-200 px-3 py-1 rounded-full text-xs font-semibold w-fit"> 
-                        <span class="text-emerald-400 font-bold">&#10003;</span> Personalización Láser &amp; Sublimación
-                    </div>                     
-                    <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight"> 
-                    Hacemos único lo que usás todos los días. </h1> 
-                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed"> 
-                    Personalizamos termos, mates, vasos térmicos con grabado láser de máxima precisión, e indumentaria con sublimación full color. Diseños exclusivos para vos o tu empresa. </p> 
-                    <div class="flex flex-wrap gap-4 pt-2"> 
-                        <a href="catalogo.html" class="bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold px-7 py-4 rounded-xl text-xs uppercase tracking-wider shadow-lg shadow-orange-500/20 transition flex items-center gap-2"> <i class="fa-solid fa-grip"></i> Explorar Catálogo </a> 
-                        <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado" target="_blank" class="border border-slate-600 hover:border-white text-white font-bold px-6 py-4 rounded-xl text-xs uppercase transition flex items-center gap-2"> <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Cotizar por WhatsApp </a> 
-                    </div>                     
-                </div>                 
-                <!-- COLUMNA DERECHA: 40% ANCHO (Fondo Blanco #FFFFFF) CON 2 RECUADROS UNO AL LADO DEL OTRO -->                 
-                <div class="lg:col-span-8 bg-white p-6 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 items-center justify-center" style="grid-area: auto /15 / auto / 14;"> 
-                    <!-- RECUADRO 1: SUBLIMACIÓN -->
-                    <div class="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
-                      <img src="1.png" alt="Sublimación" width="165" height="247" align="absmiddle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                      <div class="absolute top-3 left-3 bg-brandDark/85 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg border border-slate-700 shadow-md z-10"> Sublimación </div>
-                  </div>
-                    <!-- RECUADRO 2: GRABADO LÁSER -->
-                    <div class="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
-                      <img src="AdobeExpressPhotos_cbf702b0a7554df5bebf6bceee576b79_CopyEdited.png" alt="Grabado Láser" width="223" height="249" align="absmiddle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-                      <div class="absolute top-3 left-3 bg-brandDark/85 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg border border-slate-700 shadow-md z-10">
-                            Grabado Láser
-                      </div>
-                  </div>
-                </div>                 
-            </div>             
-        </section>         
-        <!-- 4. FRANJA DE BENEFICIOS -->         
-        <section class="bg-white py-8 border-b border-slate-200 shadow-sm"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6"> 
-                <div class="flex items-center gap-3 p-2"> 
-                    <div class="text-brandOrange text-2xl">
-                        <i class="fa-solid fa-palette"></i>
-                    </div>                     
+    </script>
+    <style>
+        .Estilo2 { 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 18pt; 
+            font-style: italic; 
+            font-weight: bold; 
+            color: #FFFFFF; 
+        }
+        .Estilo3 { font-family: Arial, Helvetica, sans-serif; }
+    </style>
+</head>     
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white relative"> 
+
+    <!-- 1. TOP BAR -->         
+    <div class="text-center px-4 py-2 font-semibold text-xs text-white bg-brandOrange flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+        <span>🚚 <strong>Envío GRATIS</strong> en compras +$50.000</span>
+        <span class="hidden sm:inline">|</span>
+        <span class="hidden md:inline">⚡ Grabado en 24/48 hs</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/10 px-2.5 py-0.5 rounded-full transition">
+            <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52, Cruz del Eje, Córdoba
+        </a>
+    </div>         
+
+    <!-- 2. HEADER Y NAVEGACIÓN PRINCIPAL -->         
+    <header class="bg-brandDark text-white sticky top-0 z-40 shadow-lg border-b border-slate-800"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4"> 
+            <!-- Logo + Nombre -->                 
+            <a href="index.html" class="flex items-center gap-3 shrink-0"> 
+                <img src="IMG-20260731-WA0095 (1).png" alt="Logo" width="100" height="100" class="h-10 w-auto object-contain">
+                <span class="Estilo2 hidden sm:inline">Todo Personalizado</span>
+            </a>
+
+            <!-- Menú Principal -->                 
+            <nav class="hidden md:flex items-center gap-6 font-semibold text-xs uppercase tracking-wider text-slate-200"> 
+                <a href="index.html" class="text-brandOrange font-bold transition">Inicio</a> 
+                <a href="#catalogo" class="hover:text-brandOrange transition">Catálogo</a> 
+                <a href="#ubicacion" class="hover:text-brandOrange transition">Ubicación</a> 
+                <a href="#pasos" class="hover:text-brandOrange transition">Cómo Comprar</a> 
+                <a href="#corporativo" class="hover:text-brandOrange transition">Empresas</a> 
+            </nav>                 
+
+            <!-- Bloque de Acciones: Ubicación + Carrito -->                 
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Botón Ubicación en Encabezado (Entre Menú y Pedido) -->
+                <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" title="Ver en Google Maps" class="bg-slate-800 hover:bg-slate-700 text-amber-400 hover:text-amber-300 px-3 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 border border-slate-700 transition shadow-sm">
+                    <i class="fa-solid fa-location-dot text-sm"></i>
+                    <span class="hidden lg:inline text-white font-semibold">Alsina 52</span>
+                </a>
+
+                <!-- Botón Carrito en Encabezado -->
+                <button onclick="toggleCart()" class="relative bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl font-bold text-xs flex items-center gap-2 shadow-md transition shrink-0">
+                    <i class="fa-solid fa-cart-shopping text-sm"></i>
+                    <span class="hidden sm:inline">Mi Pedido</span>
+                    <span id="cart-count-badge" class="bg-white text-brandDark font-black text-[11px] px-2 py-0.5 rounded-full">0</span>
+                </button>
+            </div>                 
+      </div>             
+    </header>         
+
+    <!-- 3. HERO SECTION -->         
+    <section class="w-full bg-slate-100 border-b border-slate-200"> 
+        <div class="flex flex-col lg:flex-row w-full min-h-[520px]"> 
+            <!-- COLUMNA IZQUIERDA -->                 
+            <div class="w-full lg:w-[60%] bg-brandDark text-white p-8 sm:p-12 lg:p-16 flex flex-col justify-center space-y-6"> 
+                <div class="inline-flex items-center gap-2 bg-slate-800/90 border border-slate-700 text-slate-200 px-3 py-1 rounded-full text-xs font-semibold w-fit"> 
+                    <span class="text-emerald-400 font-bold">✓</span> Personalización Láser &amp; Sublimación
+                </div>                     
+                <h1 class="text-3xl sm:text-5xl font-black leading-tight tracking-tight"> 
+                    Hacemos único lo que usás todos los días. 
+                </h1> 
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed"> 
+                    Personalizamos termos, mates, vasos térmicos con grabado láser de máxima precisión, e indumentaria con sublimación full color. Diseños exclusivos para vos o tu empresa. 
+                </p> 
+                <div class="flex flex-wrap gap-4 pt-2"> 
+                    <a href="#catalogo" class="bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold px-7 py-4 rounded-xl text-xs uppercase tracking-wider shadow-lg shadow-orange-500/20 transition flex items-center gap-2"> 
+                        <i class="fa-solid fa-grip"></i> Explorar Catálogo 
+                    </a> 
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado" target="_blank" class="border border-slate-600 hover:border-white text-white font-bold px-6 py-4 rounded-xl text-xs uppercase transition flex items-center gap-2"> 
+                        <i class="fa-brands fa-whatsapp text-emerald-400 text-lg"></i> Cotizar por WhatsApp 
+                    </a> 
+                </div>                     
+            </div>                 
+            <!-- COLUMNA DERECHA -->                 
+            <div class="w-full lg:w-[40%] bg-white p-6 sm:p-8 grid grid-cols-2 gap-4 items-center justify-center"> 
+                <div class="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md group"> 
+                    <img src="1.png" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3 left-3 bg-brandDark/85 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg border border-slate-700 shadow-md z-10"> Sublimación </div>
+                </div>
+                <div class="relative h-48 sm:h-52 w-full rounded-2xl overflow-hidden border border-slate-200 shadow-md group">
+                    <img src="AdobeExpressPhotos_cbf702b0a7554df5bebf6bceee576b79_CopyEdited.png" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-3 left-3 bg-brandDark/85 text-white text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-lg border border-slate-700 shadow-md z-10"> Grabado Láser </div>
+                </div>
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 4. FRANJA DE BENEFICIOS -->         
+    <section class="bg-white py-8 border-b border-slate-200 shadow-sm"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-6"> 
+            <div class="flex items-center gap-3 p-2"> 
+                <div class="text-brandOrange text-2xl"><i class="fa-solid fa-palette"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-xs text-slate-900">Diseño Personalizado</h4> 
+                    <p class="text-[11px] text-slate-500">Grabamos tu logo, nombre o frase</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-3 p-2"> 
+                <div class="text-emerald-500 text-2xl"><i class="fa-solid fa-bolt-lightning"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-xs text-slate-900">Producción Rápida</h4> 
+                    <p class="text-[11px] text-slate-500">Listos en 24 a 48 hs hábiles</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-3 p-2"> 
+                <div class="text-brandOrange text-2xl"><i class="fa-solid fa-shield-halved"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-xs text-slate-900">Calidad Premium</h4> 
+                    <p class="text-[11px] text-slate-500">Materiales duraderos y resistentes</p> 
+                </div>                     
+            </div>                 
+            <div class="flex items-center gap-3 p-2"> 
+                <div class="text-emerald-500 text-2xl"><i class="fa-solid fa-truck-fast"></i></div>                     
+                <div> 
+                    <h4 class="font-extrabold text-xs text-slate-900">Envíos a Todo el País</h4> 
+                    <p class="text-[11px] text-slate-500">Recibilo directo en tu domicilio</p> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 5. SECCIÓN CATÁLOGO E-COMMERCE INTEGRADO -->         
+    <section id="catalogo" class="py-14 bg-slate-50 border-b border-slate-200 scroll-mt-20"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <!-- Encabezado del Catálogo -->
+            <div class="text-center max-w-2xl mx-auto mb-8"> 
+                <span class="text-brandOrange font-bold text-xs uppercase tracking-wider">Catálogo Interactivo</span> 
+                <h2 class="text-3xl font-black text-slate-900 mt-1">Elegí y Armá tu Pedido</h2> 
+                <p class="text-xs text-slate-500 mt-2">Seleccioná los productos, agregalos al carrito y envíanos la orden directa por WhatsApp.</p>
+            </div>                 
+
+            <!-- Barra de Búsqueda y Filtros -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm">
+                <!-- Buscador -->
+                <div class="relative w-full md:w-72">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-sm"></i>
+                    <input type="text" id="search-input" oninput="filterProducts()" placeholder="Buscar producto..." class="w-full pl-9 pr-4 py-2 bg-slate-100 border border-slate-200 rounded-xl text-xs focus:outline-none focus:border-brandOrange transition">
+                </div>
+
+                <!-- Botones Categorías -->
+                <div class="flex flex-wrap items-center gap-2 w-full md:w-auto justify-center" id="category-buttons">
+                    <button onclick="setCategory('all')" class="cat-btn active bg-brandDark text-white px-4 py-2 rounded-xl text-xs font-bold transition">Todos</button>
+                    <button onclick="setCategory('termos')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition">Termos & Vasos</button>
+                    <button onclick="setCategory('mates')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition">Mates</button>
+                    <button onclick="setCategory('textil')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition">Textil</button>
+                    <button onclick="setCategory('gorras')" class="cat-btn bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2 rounded-xl text-xs font-bold transition">Gorras</button>
+                </div>
+            </div>
+
+            <!-- Grilla de Productos -->                 
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> 
+                <!-- Render dinámico JavaScript -->
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 6. SECCIÓN UBICACIÓN COMPACTA (VERSIÓN REDUCIDA Y EFICIENTE) -->
+    <section id="ubicacion" class="py-6 bg-white border-b border-slate-200 scroll-mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <!-- Datos Rápidos -->
+                <div class="flex flex-col sm:flex-row items-center sm:items-start md:items-center gap-3 sm:gap-6 text-center sm:text-left">
+                    <div class="w-10 h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-lg font-bold shrink-0">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 justify-center sm:justify-start">
+                            <h3 class="font-extrabold text-sm text-slate-900">Local Comercial</h3>
+                            <span class="bg-emerald-100 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded-full">Retiro sin Costo</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5">
+                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> <strong>Alsina 52</strong>, Cruz del Eje, Córdoba 
+                            <span class="hidden sm:inline text-slate-400">|</span> 
+                            <span class="block sm:inline text-slate-500 text-[11px] mt-0.5 sm:mt-0">Lun a Vie 9-13 / 17-21 hs</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Botón de Acción Directa a Mapa -->
+                <div class="shrink-0 w-full sm:w-auto">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-brandDark hover:bg-slate-800 text-white font-bold text-xs px-5 py-2.5 rounded-xl shadow-sm transition">
+                        <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+                        <span>Abrir Mapa Interactivo</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. SECCIÓN CÓMO COMPRAR -->         
+    <section id="pasos" class="py-14 bg-slate-50 border-b border-slate-200"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <div class="text-center max-w-2xl mx-auto mb-12"> 
+                <span class="text-brandOrange font-bold text-xs uppercase tracking-wider">Fácil y Rápido</span> 
+                <h2 class="text-3xl font-black text-slate-900 mt-1">¿Cómo crear tu producto personalizado?</h2> 
+            </div>                 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"> 
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4">1</div>                         
+                    <h3 class="font-extrabold text-base text-slate-900 mb-2">Elegí tu Producto</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Navegá por nuestro catálogo interactivo y agregá al carrito los productos que quieras.</p> 
+                </div>                     
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4">2</div>                         
+                    <h3 class="font-extrabold text-base text-slate-900 mb-2">Envianos tu Idea</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Envía la orden por WhatsApp indicando el texto, logo o grabado que te gustaría colocar.</p> 
+                </div>                     
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
+                    <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4">3</div>                         
+                    <h3 class="font-extrabold text-base text-slate-900 mb-2">¡Recibilo o Retiralo!</h3> 
+                    <p class="text-xs text-slate-500 leading-relaxed">Lo grabamos con precisión y podés retirarlo por Alsina 52 o recibirlo en tu domicilio.</p> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 8. SECCIÓN CORPORATIVA B2B -->         
+    <section id="corporativo" class="py-14 bg-slate-900 text-white"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
+            <div class="bg-brandDark rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center"> 
+                <div class="md:col-span-7 space-y-4"> 
+                    <span class="bg-brandOrange text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Ventas Mayoristas &amp; Empresas</span> 
+                    <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight"> 
+                        Merchandising &amp; Regalos Empresariales con tu Marca 
+                    </h2> 
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed"> 
+                        Potenciá la presencia de tu marca con regalos corporativos de alta calidad: kits materos, vasos térmicos grabados y prendas deportivas institucionales. Descuentos especiales por cantidad. 
+                    </p> 
+                    <div class="pt-2"> 
+                        <a href="https://wa.me/5493549430437?text=Hola!%20Necesito%20un%20presupuesto%20mayorista%20para%20mi%20empresa" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs px-6 py-3.5 rounded-xl shadow-lg transition"> 
+                            <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Presupuesto Empresarial 
+                        </a> 
+                    </div>                         
+                </div>                     
+                <div class="md:col-span-5 flex justify-center"> 
+                    <img src="1000726273_279e7d3885c21b9fd7e10cfc9fe0b047-4_8_2026, 01_02_50.jpg" alt="Merchandising B2B" class="rounded-2xl shadow-xl border border-slate-700 max-h-64 object-cover"> 
+                </div>                     
+            </div>                 
+        </div>             
+    </section>         
+
+    <!-- 9. FOOTER -->         
+    <footer class="bg-brandDark text-slate-400 py-12 border-t border-slate-800 text-xs"> 
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8"> 
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8"> 
+                <div class="space-y-3"> 
+                    <div class="flex items-center gap-2 font-black text-xl text-white"> 
+                        <span class="Estilo3">Todo Personalizado</span> 
+                    </div>                         
+                    <p class="text-slate-400 text-[11px] leading-relaxed">Especialistas en grabado láser de alta precisión y sublimación textil personalizada.</p> 
+                </div>                     
+                <div class="space-y-2"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Navegación</h4> 
+                    <p><a href="index.html" class="hover:text-white transition">Inicio</a></p> 
+                    <p><a href="#catalogo" class="hover:text-white transition">Catálogo</a></p> 
+                    <p><a href="#ubicacion" class="hover:text-white transition">Ubicación</a></p> 
+                    <p><a href="#corporativo" class="hover:text-white transition">Ventas Mayoristas</a></p> 
+                </div>                     
+                <div class="space-y-2"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Contacto & Local</h4> 
+                    <p>
+                        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:text-white transition">
+                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> Alsina 52, Cruz del Eje, Córdoba
+                        </a>
+                    </p> 
+                    <p><i class="fa-brands fa-whatsapp text-emerald-400 mr-1"></i> +54 9 3549 43 0437</p> 
+                    <p><i class="fa-solid fa-envelope text-brandOrange mr-1"></i> contacto@laniloro.com</p> 
+                </div>                     
+                <div class="space-y-2"> 
+                    <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Medios de Pago</h4> 
+                    <p class="text-[11px] text-slate-400">Aceptamos Mercado Pago, transferencias y tarjetas de crédito.</p> 
+                    <div class="flex gap-2 text-xl text-slate-300 pt-2"> 
+                        <i class="fa-brands fa-cc-visa"></i> 
+                        <i class="fa-brands fa-cc-mastercard"></i> 
+                        <i class="fa-solid fa-qrcode"></i> 
+                    </div>                         
+                </div>                     
+            </div>                 
+            <div class="pt-8 border-t border-slate-800 text-center text-[11px] text-slate-500"> 
+                &copy; 2026 Todo Personalizado - Todos los derechos reservados.
+            </div>                 
+        </div>             
+    </footer>         
+
+    <!-- 10. CARRITO SLIDE-OVER (DRAWER LATERAL) -->
+    <div id="cart-drawer-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <!-- Header Carrito -->
+        <div class="p-4 bg-brandDark text-white flex items-center justify-between border-b border-slate-800">
+            <div class="flex items-center gap-2 font-extrabold text-sm">
+                <i class="fa-solid fa-cart-shopping text-brandOrange"></i>
+                <span>Mi Pedido</span>
+            </div>
+            <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-lg px-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Lista de Items -->
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-4 space-y-4">
+            <!-- Render dinámico -->
+        </div>
+
+        <!-- Footer Carrito -->
+        <div class="p-4 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div>
+                <label for="custom-note" class="block text-[11px] font-bold text-slate-700 mb-1">
+                    <i class="fa-solid fa-pen-nib text-brandOrange mr-1"></i> Detalles de Grabado / Texto / Logo:
+                </label>
+                <textarea id="custom-note" rows="2" placeholder="Ej: Grabar nombre 'Gonzalo' en el termo..." class="w-full p-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brandOrange"></textarea>
+            </div>
+
+            <div class="flex justify-between items-center text-slate-900 font-extrabold text-sm pt-2 border-t border-slate-200">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price" class="text-base text-brandOrange">$0</span>
+            </div>
+
+            <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Enviar Pedido a WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- WIDGET FLOTANTE WHATSAPP -->         
+    <a href="https://wa.me/5493549430437?text=Hola!%20Tengo%20una%20consulta%20sobre%20un%20producto" target="_blank" class="fixed bottom-5 right-5 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110"> 
+        <i class="fa-brands fa-whatsapp"></i> 
+    </a> 
+
+    <!-- 11. JAVASCRIPT DEL CARRITO Y TIENDA -->
+    <script>
+        const products = [
+            { id: 1, name: "Termo Acero Inoxidable 1L", category: "termos", badge: "Grabado Láser", price: 28500, desc: "Mantiene el frío/calor 24hs. Incluye grabado personalizado.", image: "image-0 (2).jpg" },
+            { id: 2, name: "Mate Térmico con Bombilla", category: "mates", badge: "Grabado Láser", price: 19500, desc: "Doble capa de acero. Personalizado con tu nombre o logo.", image: "IMG-20260803-WA0100.jpg" },
+            { id: 3, name: "Remera Deportiva Sublimada", category: "textil", badge: "Sublimación", price: 14800, desc: "Estampado full color indeleble. Ideal para equipos.", image: "D_781602-MLA108862516677_032026-C.jpg" },
+            { id: 4, name: "Gorra Trucker Personalizada", category: "gorras", badge: "Sublimación / Parche", price: 8500, desc: "Excelente calce y terminación. Personalizá el frente.", image: "1000726263_1081760263c76fed835dd75796624d21-4_8_2026, 01_03_29.jpg" },
+            { id: 5, name: "Vaso Térmico Stainless Steel", category: "termos", badge: "Grabado Láser", price: 16200, desc: "Con tapa hermética y grabado personalizado sin cargo.", image: "AdobeExpressPhotos_cbf702b0a7554df5bebf6bceee576b79_CopyEdited.png" },
+            { id: 6, name: "Mate Camionero Calabaza", category: "mates", badge: "Alpaca Cincelada", price: 22000, desc: "Virola de alpaca grabada a mano con tu diseño.", image: "1.png" }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        document.addEventListener('DOMContentLoaded', () => { renderProducts(); });
+
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-brandDark', 'text-white');
+                btn.classList.add('bg-slate-100', 'text-slate-700');
+            });
+            event.target.classList.remove('bg-slate-100', 'text-slate-700');
+            event.target.classList.add('bg-brandDark', 'text-white');
+            filterProducts();
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('products-grid');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+
+            const filtered = products.filter(p => {
+                const matchCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.desc.toLowerCase().includes(searchVal);
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-12 text-slate-400">
+                        <i class="fa-solid fa-box-open text-4xl mb-2"></i>
+                        <p class="text-xs font-semibold">No se encontraron productos en esta categoría.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = filtered.map(p => `
+                <div class="bg-white rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition group"> 
                     <div> 
-                        <h4 class="font-extrabold text-xs text-slate-900">Diseño 100% Personalizado</h4> 
-                        <p class="text-[11px] text-slate-500">Grabamos tu logo, nombre o frase</p> 
-                    </div>                     
-                </div>                 
-                <div class="flex items-center gap-3 p-2"> 
-                    <div class="text-emerald-500 text-2xl">
-                        <i class="fa-solid fa-bolt-lightning"></i>
-                    </div>                     
+                        <div class="h-48 bg-slate-50 rounded-xl mb-3 overflow-hidden border border-slate-100 relative">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        </div>                             
+                        <span class="text-[10px] font-bold text-brandOrange uppercase tracking-wider">${p.badge}</span> 
+                        <h3 class="font-bold text-xs text-slate-900 mt-1 leading-snug">${p.name}</h3> 
+                        <p class="text-[11px] text-slate-500 my-2">${p.desc}</p> 
+                    </div>                         
                     <div> 
-                        <h4 class="font-extrabold text-xs text-slate-900">Producción Rápida</h4> 
-                        <p class="text-[11px] text-slate-500">Listos en 24 a 48 hs hábiles</p> 
-                    </div>                     
-                </div>                 
-                <div class="flex items-center gap-3 p-2"> 
-                    <div class="text-brandOrange text-2xl">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>                     
-                    <div> 
-                        <h4 class="font-extrabold text-xs text-slate-900">Calidad Premium</h4> 
-                        <p class="text-[11px] text-slate-500">Materiales duraderos y resistentes</p> 
-                    </div>                     
-                </div>                 
-                <div class="flex items-center gap-3 p-2"> 
-                    <div class="text-emerald-500 text-2xl">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>                     
-                    <div> 
-                        <h4 class="font-extrabold text-xs text-slate-900">Envíos a Todo el País</h4> 
-                        <p class="text-[11px] text-slate-500">Recibilo directo en tu domicilio</p> 
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <!-- 5. SECCIÓN CÓMO COMPRAR EN 3 PASOS -->         
-        <section id="pasos" class="py-14 bg-slate-50 border-b border-slate-200"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-                <div class="text-center max-w-2xl mx-auto mb-12"> 
-                    <span class="text-brandOrange font-bold text-xs uppercase tracking-wider">Fácil y Rápido</span> 
-                    <h2 class="text-3xl font-black text-slate-900 mt-1">¿Cómo crear tu producto personalizado?</h2> 
-                </div>                 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto"> 
-                    <!-- Paso 1 -->                     
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
-                        <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4"> 
-                            1
-                        </div>                         
-                        <h3 class="font-extrabold text-base text-slate-900 mb-2">Elegí tu Producto</h3> 
-                        <p class="text-xs text-slate-500 leading-relaxed">Navegá por nuestro catálogo y seleccioná el mate, termo, vaso o prenda textil que querés personalizar.</p> 
-                    </div>                     
-                    <!-- Paso 2 -->                     
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
-                        <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4"> 
-                            2
-                        </div>                         
-                        <h3 class="font-extrabold text-base text-slate-900 mb-2">Envianos tu Idea</h3> 
-                        <p class="text-xs text-slate-500 leading-relaxed">Mandanos por WhatsApp tu logo, texto o imagen. Nosotros preparamos una muestra digital antes de grabar.</p> 
-                    </div>                     
-                    <!-- Paso 3 -->                     
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center flex flex-col items-center"> 
-                        <div class="w-16 h-16 bg-orange-100 text-brandOrange rounded-2xl flex items-center justify-center text-2xl font-black mb-4"> 
-                            3
-                        </div>                         
-                        <h3 class="font-extrabold text-base text-slate-900 mb-2">¡Recibilo en tu Casa!</h3> 
-                        <p class="text-xs text-slate-500 leading-relaxed">Grabamos tu pedido con precisión láser y lo enviamos a cualquier punto del país de forma segura.</p> 
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <!-- 6. SECCIÓN LO MÁS VENDIDO -->         
-        <section id="lo-mas-vendido" class="py-14 bg-white border-b border-slate-200"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-                <div class="flex flex-col sm:flex-row items-start sm:items-end justify-between mb-10 gap-4"> 
-                    <div> 
-                        <span class="text-brandOrange font-bold text-xs uppercase tracking-wider">Favoritos de Clientes</span> 
-                        <h2 class="text-3xl font-black text-slate-900 mt-1">Lo Más Vendido</h2> 
-                    </div>                     
-                    <p><a href="catalogo.html" class="text-xs font-bold text-brandDark hover:text-brandOrange transition flex items-center gap-1"> 
-                  Ver todo el catálogo <i class="fa-solid fa-arrow-right"></i> </a> </p> 
-                    <p>&nbsp;    </p> 
-                </div>                 
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> 
-                    <!-- Producto 1 -->                     
-                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition"> 
-                        <div> 
-                            <div class="h-48 bg-white rounded-xl mb-3 overflow-hidden border border-slate-200">
-                                <img src="termo.jpg" alt="Termo" width="500" height="253" class="flex-col">                            </div>                             
-                            <span class="text-[10px] font-bold text-brandOrange uppercase tracking-wider">Grabado Láser</span> 
-                            <h3 class="font-bold text-xs text-slate-900 mt-1 leading-snug">Termo Acero Inoxidable 1L</h3> 
-                            <p class="text-[11px] text-slate-500 my-2">Mantiene el frío/calor 24hs. Incluye grabado personalizado.</p> 
-                        </div>                         
-                        <div> 
-                            <span class="text-base font-black text-slate-900 block mb-3">$28.500</span> 
-                            <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20pedir%20el%20Termo%20Acero%20Inoxidable%201L%20personalizado" target="_blank" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-xs py-2.5 rounded-xl shadow transition text-center block"> <i class="fa-brands fa-whatsapp mr-1"></i> Pedir por WhatsApp </a> 
-                        </div>                         
-                    </div>                     
-                    <!-- Producto 2 -->                     
-                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition"> 
-                        <div> 
-                            <div class="h-48 bg-white rounded-xl mb-3 overflow-hidden border border-slate-200"><img src="IMG-20260803-WA0100.jpg" alt="Mate Térmico" width="1325" height="1342" class="w-full h-full object-cover"></div>                             
-                            <span class="text-[10px] font-bold text-brandOrange uppercase tracking-wider">Grabado Láser</span> 
-                            <h3 class="font-bold text-xs text-slate-900 mt-1 leading-snug">Mate Térmico con Bombilla</h3> 
-                            <p class="text-[11px] text-slate-500 my-2">Doble capa de acero. Personalizado con tu nombre o logo.</p> 
-                        </div>                         
-                        <div> 
-                            <span class="text-base font-black text-slate-900 block mb-3">$19.500</span> 
-                            <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20pedir%20el%20Mate%20T%C3%A9rmico%20personalizado" target="_blank" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-xs py-2.5 rounded-xl shadow transition text-center block"> <i class="fa-brands fa-whatsapp mr-1"></i> Pedir por WhatsApp </a> 
-                        </div>                         
-                    </div>                     
-                    <!-- Producto 3 -->                     
-                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition"> 
-                        <div> 
-                            <div class="h-48 bg-white rounded-xl mb-3 overflow-hidden border border-slate-200"> 
-                                <img src="D_781602-MLA108862516677_032026-C.jpg" alt="Remera Sublimada" width="400" height="400" class="w-full h-full object-cover">                            </div>                             
-                            <span class="text-[10px] font-bold text-brandOrange uppercase tracking-wider">Sublimación</span> 
-                            <h3 class="font-bold text-xs text-slate-900 mt-1 leading-snug">Remera Deportiva Sublimada</h3> 
-                            <p class="text-[11px] text-slate-500 my-2">Estampado full color indeleble. Ideal para equipos y eventos.</p> 
-                        </div>                         
-                        <div> 
-                            <span class="text-base font-black text-slate-900 block mb-3">$14.800</span> 
-                            <a href="https://wa.me/5491112345678?text=Hola!%20Quiero%20pedir%20la%20Remera%20Deportiva%20Sublimada" target="_blank" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-xs py-2.5 rounded-xl shadow transition text-center block"> <i class="fa-brands fa-whatsapp mr-1"></i> Pedir por WhatsApp </a> 
-                        </div>                         
-                    </div>                     
-                    <!-- Producto 4 -->                     
-                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200 shadow-sm flex flex-col justify-between hover:shadow-md transition"> 
-                        <div> 
-                            <div class="h-48 bg-white rounded-xl mb-3 overflow-hidden border border-slate-200"> 
-                                <img src="1000726263_1081760263c76fed835dd75796624d21-4_8_2026, 01_03_29.jpg" alt="Gorra Trucker" width="2000" height="1999" class="w-full h-full object-cover">                            </div>                             
-                            <span class="text-[10px] font-bold text-brandOrange uppercase tracking-wider">Sublimación / Parche</span> 
-                            <h3 class="font-bold text-xs text-slate-900 mt-1 leading-snug">Gorra Trucker Personalizada</h3> 
-                            <p class="text-[11px] text-slate-500 my-2">Excelente calce y terminación. Personalizá el frente con tu marca.</p> 
-                        </div>                         
-                        <div> 
-                            <span class="text-base font-black text-slate-900 block mb-3">$8.500</span> 
-                            <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20pedir%20la%20Gorra%20Trucker%20Personalizada" target="_blank" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-xs py-2.5 rounded-xl shadow transition text-center block"> <i class="fa-brands fa-whatsapp mr-1"></i> Pedir por WhatsApp </a> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <!-- 7. SECCIÓN CORPORATIVA B2B -->         
-        <section id="corporativo" class="py-14 bg-slate-900 text-white"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> 
-                <div class="bg-brandDark rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-2xl grid grid-cols-1 md:grid-cols-12 gap-8 items-center"> 
-                    <div class="md:col-span-7 space-y-4"> 
-                        <span class="bg-brandOrange text-white font-bold text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Ventas Mayoristas &amp; Empresas</span> 
-                        <h2 class="text-2xl sm:text-4xl font-extrabold leading-tight"> 
-                        Merchandising &amp; Regalos Empresariales con tu Marca </h2> 
-                        <p class="text-slate-300 text-xs sm:text-sm leading-relaxed"> 
-                        Potenciá la presencia de tu marca con regalos corporativos de alta calidad: kits materos, vasos térmicos grabados y prendas deportivas institucionales. Descuentos especiales por cantidad. </p> 
-                        <div class="pt-2"> 
-                            <a href="https://wa.me/5493549430437?text=Hola!%20Necesito%20un%20presupuesto%20mayorista%20para%20mi%20empresa" target="_blank" class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs px-6 py-3.5 rounded-xl shadow-lg transition"> <i class="fa-brands fa-whatsapp text-lg"></i> Solicitar Presupuesto Empresarial </a> 
-                        </div>                         
-                    </div>                     
-                    <div class="md:col-span-5 flex justify-center"> 
-                        <img src="1000726273_279e7d3885c21b9fd7e10cfc9fe0b047-4_8_2026, 01_02_50.jpg" alt="Merchandising B2B" width="1600" height="1600" class="rounded-2xl shadow-xl border border-slate-700 max-h-64 object-cover"> 
-                    </div>                     
-                </div>                 
-            </div>             
-        </section>         
-        <!-- 8. FOOTER -->         
-        <footer class="bg-brandDark text-slate-400 py-12 border-t border-slate-800 text-xs"> 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8"> 
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8"> 
-                    <!-- Columna 1 -->                     
-                    <div class="space-y-3"> 
-                        <div class="flex items-center gap-2 font-black text-xl text-white"> 
-                            <span class="Estilo3">LANILORO</span> 
-                        </div>                         
-                        <p class="text-slate-400 text-[11px] leading-relaxed">Especialistas en grabado láser de alta precisión y sublimación textil personalizada.</p> 
-                    </div>                     
-                    <!-- Columna 2 -->                     
-                    <div class="space-y-2"> 
-                        <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Navegación</h4> 
-                        <p><a href="index.html" class="hover:text-white transition">Inicio</a></p> 
-                        <p><a href="catalogo.html" class="hover:text-white transition">Catálogo Completo</a></p> 
-                        <p><a href="index.html#lo-mas-vendido" class="hover:text-white transition">Lo Más Vendido</a></p> 
-                        <p><a href="index.html#corporativo" class="hover:text-white transition">Ventas Mayoristas</a></p> 
-                    </div>                     
-                    <!-- Columna 3 -->                     
-                    <div class="space-y-2"> 
-                        <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Contacto</h4> 
-                        <p><i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> Envíos a todo el país</p> 
-                        <p><i class="fa-brands fa-whatsapp text-emerald-400 mr-1"></i> +54 9 3549 43 0437</p> 
-                        <p><i class="fa-solid fa-envelope text-brandOrange mr-1"></i> contacto@laniloro.com</p> 
-                    </div>                     
-                    <!-- Columna 4 -->                     
-                    <div class="space-y-2"> 
-                        <h4 class="text-white font-extrabold text-xs uppercase tracking-wider mb-2">Medios de Pago</h4> 
-                        <p class="text-[11px] text-slate-400">Aceptamos Mercado Pago, transferencias y tarjetas de crédito.</p> 
-                        <div class="flex gap-2 text-xl text-slate-300 pt-2"> 
-                            <i class="fa-brands fa-cc-visa"></i> 
-                            <i class="fa-brands fa-cc-mastercard"></i> 
-                            <i class="fa-solid fa-qrcode"></i> 
-                        </div>                         
-                    </div>                     
-                </div>                 
-                <div class="pt-8 border-t border-slate-800 text-center text-[11px] text-slate-500"> 
-                    &copy; 2026 el_mannco - Todos los derechos reservados.
-                </div>                 
-            </div>             
-        </footer>         
-        <!-- WIDGET FLOTANTE WHATSAPP -->         
-        <a href="https://wa.me/5491112345678?text=Hola!%20Tengo%20una%20consulta%20sobre%20un%20producto" target="_blank" class="fixed bottom-5 right-5 z-50 bg-emerald-500 hover:bg-emerald-600 text-white w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition transform hover:scale-110"> <i class="fa-brands fa-whatsapp"></i> </a> 
-    </body>
+                        <span class="text-base font-black text-slate-900 block mb-3">$${p.price.toLocaleString('es-AR')}</span> 
+                        <button onclick="addToCart(${p.id})" class="w-full bg-brandOrange hover:bg-brandOrangeHover text-white font-bold text-xs py-2.5 rounded-xl shadow transition text-center flex items-center justify-center gap-2"> 
+                            <i class="fa-solid fa-plus"></i> Agregar al Pedido
+                        </button> 
+                    </div>                         
+                </div>
+            `).join('');
+        }
+
+        function filterProducts() { renderProducts(); }
+
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const exist = cart.find(item => item.id === id);
+            if (exist) { exist.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
+            }
+            updateCartUI();
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-count-badge').innerText = totalQty;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-slate-400 text-center p-6">
+                        <i class="fa-solid fa-cart-flatbed text-5xl mb-3 text-slate-300"></i>
+                        <p class="text-xs font-bold text-slate-600">Tu carrito está vacío</p>
+                    </div>`;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-3 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-12 h-12 rounded-lg object-cover border border-slate-200">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-900 truncate">${item.name}</h4>
+                            <p class="text-[11px] text-slate-500">$${item.price.toLocaleString('es-AR')}</p>
+                            <div class="flex items-center gap-2 mt-1">
+                                <button onclick="changeQty(${item.id}, -1)" class="w-5 h-5 bg-white border border-slate-300 rounded text-slate-700 font-bold text-xs flex items-center justify-center hover:bg-slate-100">-</button>
+                                <span class="text-xs font-bold text-slate-800">${item.qty}</span>
+                                <button onclick="changeQty(${item.id}, 1)" class="w-5 h-5 bg-white border border-slate-300 rounded text-slate-700 font-bold text-xs flex items-center justify-center hover:bg-slate-100">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-bold text-xs text-slate-900 block">$${(item.price * item.qty).toLocaleString('es-AR')}</span>
+                            <button onclick="removeItem(${item.id})" class="text-red-500 hover:text-red-700 text-xs mt-1"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>`).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('cart-total-price').innerText = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const backdrop = document.getElementById('cart-drawer-backdrop');
+            if (forceOpen || drawer.classList.contains('translate-x-full')) {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('hidden');
+            }
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Agregá al menos un producto al pedido antes de enviar.");
+                return;
+            }
+
+            const phone = "5493549430437";
+            let message = "👋 *¡Hola! Quiero realizar un pedido desde la web:*\n\n";
+
+            cart.forEach((item, idx) => {
+                message += `*${idx + 1}. ${item.name}*\n`;
+                message += `   • Cantidad: ${item.qty}\n`;
+                message += `   • Precio Unitario: $${item.price.toLocaleString('es-AR')}\n`;
+                message += `   • Subtotal: $${(item.price * item.qty).toLocaleString('es-AR')}\n\n`;
+            });
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
+
+            const note = document.getElementById('custom-note').value.trim();
+            if (note) {
+                message += `✍️ *Detalles / Grabado Personalizado:*\n"${note}"\n\n`;
+            }
+
+            message += "Quedo a la espera para coordinar el pago y envío. ¡Muchas gracias!";
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
 </html>
