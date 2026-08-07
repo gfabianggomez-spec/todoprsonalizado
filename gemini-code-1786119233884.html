@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+    <title>Todo Personalizado - Sublimación &amp; Grabado Láser</title>         
+    
+    <!-- Font Awesome CDN para Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Google Fonts Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->         
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0A1128',
+                        brandOrange: '#FF5A00',
+                        brandOrangeHover: '#E04F00',
+                        brandBlue: '#1D4ED8'
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .Estilo2 { 
+            font-family: Arial, Helvetica, sans-serif; 
+            font-size: 16pt; 
+            font-style: italic; 
+            font-weight: bold; 
+            color: #FFFFFF; 
+        }
+        /* Ocultar barra de desplazamiento horizontal manteniendo scroll */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>     
+<body class="bg-slate-100 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white relative pb-10"> 
+
+    <!-- 1. TOP BAR COMPACTA -->         
+    <div class="text-center px-3 py-2 font-semibold text-xs text-white bg-brandOrange flex justify-between sm:justify-center items-center gap-2">
+        <span class="truncate">🚚 <strong>Envío GRATIS</strong> +$50.000</span>
+        <span class="hidden sm:inline">|</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/15 px-2 py-1 rounded-lg text-[11px] shrink-0">
+            <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52
+        </a>
+    </div>         
+
+    <!-- 2. HEADER Y NAVEGACIÓN STICKY -->         
+    <header class="bg-brandDark text-white sticky top-0 z-40 shadow-md border-b border-slate-800"> 
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2"> 
+            <!-- Logo + Nombre -->                 
+            <a href="index.html" class="flex items-center gap-2 shrink-0"> 
+                <div class="w-9 h-9 rounded-full bg-slate-900 border-2 border-brandOrange flex items-center justify-center text-brandOrange">
+                    <i class="fa-solid fa-wand-magic-sparkles text-sm"></i>
+                </div>
+                <span class="Estilo2 text-base">Todo Personalizado</span>
+            </a>
+
+            <!-- Menú Escritorio -->                 
+            <nav class="hidden md:flex items-center gap-6 font-semibold text-xs uppercase tracking-wider text-slate-200"> 
+                <a href="index.html" class="text-brandOrange font-bold transition">Inicio</a> 
+                <a href="#galeria" class="hover:text-brandOrange transition">Trabajos Realizados</a>
+                <a href="#catalogo" class="hover:text-brandOrange transition">Catálogo</a> 
+                <a href="#ubicacion" class="hover:text-brandOrange transition">Ubicación</a> 
+                <a href="#pasos" class="hover:text-brandOrange transition">Cómo Comprar</a> 
+            </nav>                 
+
+            <!-- Botón Mi Pedido / Carrito -->                 
+            <button onclick="toggleCart()" class="relative bg-brandOrange hover:bg-brandOrangeHover text-white px-3 py-2 rounded-xl font-extrabold text-xs flex items-center gap-2 shadow transition shrink-0">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Mi Pedido</span>
+                <span id="cart-count-badge" class="bg-white text-brandDark font-black text-[10px] px-1.5 py-0.5 rounded-full">0</span>
+            </button>
+        </div>             
+    </header>         
+
+    <main class="max-w-7xl mx-auto px-2.5 sm:px-6 lg:px-8 space-y-3 sm:space-y-6 mt-3 sm:mt-6">
+
+        <!-- 3. HERO SECTION -->         
+        <section class="bg-brandDark text-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 lg:p-12 shadow-lg border border-slate-800 overflow-hidden"> 
+            <div class="flex flex-col lg:flex-row gap-6 items-center"> 
+                
+                <!-- Contenido Texto -->                 
+                <div class="w-full lg:w-3/5 space-y-3 sm:space-y-5 text-left"> 
+                    <div class="inline-flex items-center gap-1.5 bg-slate-800/90 border border-slate-700 text-slate-200 px-3 py-1 rounded-full text-xs font-semibold"> 
+                        <span class="text-emerald-400 font-bold">✓</span> Grabado Láser &amp; Sublimación
+                    </div>                     
+                    <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight"> 
+                        Hacemos único lo que usás todos los días. 
+                    </h1> 
+                    <p class="text-slate-300 text-xs sm:text-base leading-relaxed"> 
+                        Personalizamos termos, mates y vasos térmicos con grabado láser de alta precisión, e indumentaria con sublimación full color. 
+                    </p> 
+
+                    <div class="flex flex-row gap-2.5 pt-1"> 
+                        <a href="#catalogo" class="flex-1 sm:flex-none text-center bg-brandOrange hover:bg-brandOrangeHover text-white font-black px-4 py-3 rounded-xl text-xs uppercase tracking-wider shadow transition"> 
+                            <i class="fa-solid fa-grip mr-1"></i> Ver Catálogo 
+                        </a> 
+                        <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20producto%20personalizado" target="_blank" class="flex-1 sm:flex-none text-center bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-bold px-4 py-3 rounded-xl text-xs uppercase transition flex items-center justify-center gap-1.5"> 
+                            <i class="fa-brands fa-whatsapp text-emerald-400 text-sm"></i> WhatsApp 
+                        </a> 
+                    </div>                     
+                </div>                 
+
+                <!-- Botones / Tarjetas Interactivas de Técnica -->                 
+                <div class="w-full lg:w-2/5 grid grid-cols-2 gap-2.5 sm:gap-4"> 
+                    
+                    <div onclick="openAssistant('sublimacion')" class="bg-slate-900 border border-slate-700 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
+                        <div class="h-32 sm:h-44 rounded-lg overflow-hidden relative mb-2">
+                            <img src="image-0.jpg" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-1.5 left-1.5 bg-brandDark/90 text-white text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-700">SUBLIMACIÓN</span>
+                        </div>
+                        <button class="w-full bg-brandOrange text-white text-[11px] font-extrabold py-2 rounded-lg flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-hand-pointer text-amber-300 text-xs"></i>
+                            <span>Pedir Estampado</span>
+                        </button>
+                    </div>
+
+                    <div onclick="openAssistant('laser')" class="bg-slate-900 border border-slate-700 rounded-xl sm:rounded-2xl p-2.5 sm:p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
+                        <div class="h-32 sm:h-44 rounded-lg overflow-hidden relative mb-2">
+                            <img src="grabado laser.jpeg" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <span class="absolute top-1.5 left-1.5 bg-brandDark/90 text-white text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-700">GRABADO LÁSER</span>
+                        </div>
+                        <button class="w-full bg-slate-800 border border-slate-600 text-white text-[11px] font-extrabold py-2 rounded-lg flex items-center justify-center gap-1">
+                            <i class="fa-solid fa-hand-pointer text-amber-300 text-xs"></i>
+                            <span>Pedir Grabado</span>
+                        </button>
+                    </div>
+
+                </div>                 
+            </div>             
+        </section>         
+
+        <!-- 4. BENEFICIOS -->         
+        <section class="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-slate-200 shadow-sm"> 
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4"> 
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3"> 
+                    <div class="text-brandOrange text-lg sm:text-2xl shrink-0"><i class="fa-solid fa-palette"></i></div>                     
+                    <div> 
+                        <h4 class="font-extrabold text-xs text-slate-900">100% Personalizado</h4> 
+                        <p class="text-[10px] text-slate-500 leading-tight">Grabamos tu diseño</p> 
+                    </div>                     
+                </div>                 
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3"> 
+                    <div class="text-emerald-500 text-lg sm:text-2xl shrink-0"><i class="fa-solid fa-bolt-lightning"></i></div>                     
+                    <div> 
+                        <h4 class="font-extrabold text-xs text-slate-900">Rápido 24/48hs</h4> 
+                        <p class="text-[10px] text-slate-500 leading-tight">Listos en tiempo récord</p> 
+                    </div>                     
+                </div>                 
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3"> 
+                    <div class="text-brandOrange text-lg sm:text-2xl shrink-0"><i class="fa-solid fa-shield-halved"></i></div>                     
+                    <div> 
+                        <h4 class="font-extrabold text-xs text-slate-900">Acero Inoxidable</h4> 
+                        <p class="text-[10px] text-slate-500 leading-tight">Garantía de calidad</p> 
+                    </div>                     
+                </div>                 
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex items-center gap-3"> 
+                    <div class="text-emerald-500 text-lg sm:text-2xl shrink-0"><i class="fa-solid fa-truck-fast"></i></div>                     
+                    <div> 
+                        <h4 class="font-extrabold text-xs text-slate-900">Envíos a Domicilio</h4> 
+                        <p class="text-[10px] text-slate-500 leading-tight">A todo el país</p> 
+                    </div>                     
+                </div>                 
+            </div>             
+        </section>         
+
+        <!-- 5. NUEVA SECCIÓN: ALGUNOS DE NUESTROS TRABAJOS REALIZADOS (PROMOCIONAL) -->
+        <section id="galeria" class="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-slate-200 shadow-sm scroll-mt-20">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                <div>
+                    <span class="bg-amber-100 text-amber-900 font-extrabold text-[10px] px-2.5 py-1 rounded-full uppercase tracking-wider inline-flex items-center gap-1">
+                        <i class="fa-solid fa-star text-brandOrange"></i> Galería Exclusiva
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-black text-slate-900 mt-1">Algunos de Nuestros Trabajos Realizados</h2>
+                    <p class="text-xs text-slate-500">Muestras reales de productos personalizados entregados a nuestros clientes.</p>
+                </div>
+                
+                <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20enviarles%20mi%20dise%C3%B1o%20para%20un%20trabajo%20personalizado" target="_blank" class="self-start sm:self-auto bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-3.5 py-2.5 rounded-xl transition flex items-center gap-1.5 shrink-0">
+                    <i class="fa-solid fa-camera text-brandOrange"></i>
+                    <span>¡Hacé el tuyo!</span>
+                </a>
+            </div>
+
+            <!-- Grilla Rectangular de Muestras Promocionales -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-4">
+                
+                <!-- Muestra 1 -->
+                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
+                    <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
+                        <img src="grabado laser.jpeg" alt="Termo Grabado Personalizado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span class="absolute top-1.5 left-1.5 bg-black/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">GRABADO LÁSER</span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-xs text-slate-900">Grabado en Acero</h4>
+                        <p class="text-[10px] text-slate-500 mb-2">Logos, nombres y escudos con nitidez extrema.</p>
+                    </div>
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Me%20interesa%20un%20grabado%20similar%20al%20de%20la%20galeria" target="_blank" class="w-full bg-white border border-slate-300 hover:border-brandOrange text-slate-800 font-extrabold text-[10px] py-1.5 rounded-lg text-center flex items-center justify-center gap-1 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i> Pedir similar
+                    </a>
+                </div>
+
+                <!-- Muestra 2 -->
+                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
+                    <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
+                        <img src="mate grabado.jpg" alt="Mate de Acero Grabado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span class="absolute top-1.5 left-1.5 bg-black/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">MATE PERSONALIZADO</span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-xs text-slate-900">Mates Térmicos</h4>
+                        <p class="text-[10px] text-slate-500 mb-2">Personalizado indeleble alta durabilidad.</p>
+                    </div>
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20mate%20grabado%20como%20el%20de%20la%20muestra" target="_blank" class="w-full bg-white border border-slate-300 hover:border-brandOrange text-slate-800 font-extrabold text-[10px] py-1.5 rounded-lg text-center flex items-center justify-center gap-1 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i> Pedir similar
+                    </a>
+                </div>
+
+                <!-- Muestra 3 -->
+                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
+                    <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
+                        <img src="image-0.jpg" alt="Indumentaria Sublimada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span class="absolute top-1.5 left-1.5 bg-black/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">SUBLIMACIÓN FULL</span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-xs text-slate-900">Ropa &amp; Deportes</h4>
+                        <p class="text-[10px] text-slate-500 mb-2">Colores vivos sin desgaste ni desteñido.</p>
+                    </div>
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20sublimado%20de%20indumentaria" target="_blank" class="w-full bg-white border border-slate-300 hover:border-brandOrange text-slate-800 font-extrabold text-[10px] py-1.5 rounded-lg text-center flex items-center justify-center gap-1 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i> Pedir similar
+                    </a>
+                </div>
+
+                <!-- Muestra 4 -->
+                <div class="bg-slate-50 rounded-xl p-2.5 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
+                    <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
+                        <img src="images (5).jpeg" alt="Merchandising Institucional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <span class="absolute top-1.5 left-1.5 bg-black/75 text-white text-[9px] font-bold px-1.5 py-0.5 rounded">MERCHANDISING</span>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-xs text-slate-900">Kits Empresariales</h4>
+                        <p class="text-[10px] text-slate-500 mb-2">Regalería institucional de alta gama.</p>
+                    </div>
+                    <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20un%20presupuesto%20por%20kits%20de%20regaleria%20empresarial" target="_blank" class="w-full bg-white border border-slate-300 hover:border-brandOrange text-slate-800 font-extrabold text-[10px] py-1.5 rounded-lg text-center flex items-center justify-center gap-1 transition">
+                        <i class="fa-brands fa-whatsapp text-emerald-500"></i> Pedir similar
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 6. CATÁLOGO DE PRODUCTOS -->         
+        <section id="catalogo" class="bg-white rounded-2xl sm:rounded-3xl p-3.5 sm:p-6 border border-slate-200 shadow-sm scroll-mt-20"> 
+            
+            <!-- Encabezado y Buscador -->
+            <div class="mb-4 space-y-3"> 
+                <div class="flex items-center justify-between">
+                    <div>
+                        <span class="text-brandOrange font-extrabold text-[10px] uppercase tracking-wider block">Catálogo Oficial</span> 
+                        <h2 class="text-xl sm:text-2xl font-black text-slate-900">Nuestros Productos</h2> 
+                    </div>
+                </div>                 
+
+                <!-- Buscador Rectangular Táctil -->
+                <div class="relative w-full">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-slate-400 text-xs"></i>
+                    <input type="text" id="search-input" oninput="filterProducts()" placeholder="Buscar producto (ej: termo, mate, remera)..." class="w-full pl-9 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs font-semibold focus:outline-none focus:border-brandOrange transition">
+                </div>
+
+                <!-- Categorías Estilo "Chips" -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="category-buttons">
+                    <button onclick="setCategory('all', this)" class="cat-btn shrink-0 bg-brandDark text-white px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm">Todos</button>
+                    <button onclick="setCategory('termos', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold">Termos &amp; Mates</button>
+                    <button onclick="setCategory('textil', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold">Textil &amp; Deporte</button>
+                    <button onclick="setCategory('accesorios', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold">Accesorios</button>
+                    <button onclick="setCategory('corporativo', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold">Corporativo</button>
+                </div>
+            </div>
+
+            <!-- GRILLA DINÁMICA DE PRODUCTOS -->
+            <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4"> 
+                <!-- Cargado con JS -->
+            </div>                 
+        </section>         
+
+        <!-- 7. LOCAL Y UBICACIÓN -->
+        <section id="ubicacion" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-sm scroll-mt-20">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-3 w-full md:w-auto">
+                    <div class="w-10 h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-lg font-bold shrink-0">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h3 class="font-extrabold text-sm text-slate-900">Retiro por Local</h3>
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">Sin Costo</span>
+                        </div>
+                        <p class="text-xs text-slate-600 mt-0.5">
+                            <i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> <strong>Alsina 52</strong>, Cruz del Eje
+                        </p>
+                    </div>
+                </div>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="w-full md:w-auto bg-brandDark hover:bg-slate-800 text-white font-bold text-xs px-4 py-3 rounded-xl shadow transition text-center flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-map-location-dot text-amber-400"></i>
+                    <span>Ver en Google Maps</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 8. PASOS DE COMPRA -->         
+        <section id="pasos" class="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-slate-200 shadow-sm"> 
+            <div class="text-center max-w-xl mx-auto mb-4 sm:mb-6"> 
+                <span class="text-brandOrange font-bold text-[10px] uppercase tracking-wider">Paso a Paso</span> 
+                <h2 class="text-xl sm:text-2xl font-black text-slate-900">¿Cómo realizar tu pedido?</h2> 
+            </div>                 
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3"> 
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex md:flex-col items-center gap-3 text-left md:text-center"> 
+                    <div class="w-10 h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-base font-black shrink-0">1</div>                         
+                    <div>
+                        <h3 class="font-extrabold text-xs text-slate-900 mb-0.5">Elegí tu Producto</h3> 
+                        <p class="text-[11px] text-slate-500">Añadí al pedido tus artículos favoritos del catálogo.</p> 
+                    </div>
+                </div>                     
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex md:flex-col items-center gap-3 text-left md:text-center"> 
+                    <div class="w-10 h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-base font-black shrink-0">2</div>                         
+                    <div>
+                        <h3 class="font-extrabold text-xs text-slate-900 mb-0.5">Indicá tu Grabado</h3> 
+                        <p class="text-[11px] text-slate-500">Envianos el texto, nombre o logo que querés aplicar.</p> 
+                    </div>
+                </div>                     
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex md:flex-col items-center gap-3 text-left md:text-center"> 
+                    <div class="w-10 h-10 bg-orange-100 text-brandOrange rounded-xl flex items-center justify-center text-base font-black shrink-0">3</div>                         
+                    <div>
+                        <h3 class="font-extrabold text-xs text-slate-900 mb-0.5">¡Listo para Usar!</h3> 
+                        <p class="text-[11px] text-slate-500">Retirás en el local o te lo enviamos a tu casa.</p> 
+                    </div>
+                </div>                     
+            </div>                 
+        </section>         
+
+        <!-- 9. CORPORATIVO -->         
+        <section id="corporativo" class="bg-slate-900 text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-800 shadow-md"> 
+            <div class="flex flex-col md:flex-row gap-4 items-center justify-between"> 
+                <div class="space-y-2"> 
+                    <span class="bg-brandOrange text-white font-bold text-[9px] px-2 py-0.5 rounded-full uppercase tracking-wider">Ventas Mayoristas</span> 
+                    <h2 class="text-xl sm:text-3xl font-extrabold"> 
+                        Merchandising Empresarial 
+                    </h2> 
+                    <p class="text-slate-300 text-xs max-w-xl"> 
+                        Kits materos, vasos e indumentaria institucional grabada con el logo de tu empresa.
+                    </p> 
+                </div>                     
+                <a href="https://wa.me/5493549430437?text=Hola!%20Necesito%20un%20presupuesto%20mayorista%20para%20mi%20empresa" target="_blank" class="w-full md:w-auto shrink-0 bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs px-5 py-3 rounded-xl shadow transition text-center flex items-center justify-center gap-2"> 
+                    <i class="fa-brands fa-whatsapp text-base"></i> Presupuesto Mayorista 
+                </a> 
+            </div>                 
+        </section>         
+
+    </main>
+
+    <!-- 10. FOOTER -->         
+    <footer class="mt-8 text-slate-500 text-[11px] text-center max-w-7xl mx-auto px-4"> 
+        <p class="font-bold text-slate-700 mb-1">Todo Personalizado - Grabado Láser &amp; Sublimación</p>
+        <p>Alsina 52, Cruz del Eje | WhatsApp: +54 9 3549 43 0437</p>
+        <p class="mt-3 text-[10px] text-slate-400">&copy; 2026 Todos los derechos reservados.</p>
+    </footer>         
+
+    <!-- 11. DESPLEGABLE CARRITO -->
+    <div id="cart-drawer-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+    
+    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-4 bg-brandDark text-white flex items-center justify-between border-b border-slate-800">
+            <div class="flex items-center gap-2 font-extrabold text-sm">
+                <i class="fa-solid fa-cart-shopping text-brandOrange"></i>
+                <span>Mi Pedido</span>
+            </div>
+            <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-lg px-2">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div id="cart-items-container" class="flex-1 overflow-y-auto p-3 space-y-2.5">
+        </div>
+
+        <div class="p-4 bg-slate-50 border-t border-slate-200 space-y-3">
+            <div>
+                <label for="custom-note" class="block text-[11px] font-bold text-slate-700 mb-1">
+                    <i class="fa-solid fa-pen-nib text-brandOrange mr-1"></i> Texto / Nombre / Logo a Grabar:
+                </label>
+                <textarea id="custom-note" rows="2" placeholder="Ej: Grabar 'Gonzalo' en el termo..." class="w-full p-2 bg-white border border-slate-300 rounded-xl text-xs focus:outline-none focus:border-brandOrange"></textarea>
+            </div>
+
+            <div class="flex justify-between items-center text-slate-900 font-extrabold text-sm pt-1 border-t border-slate-200">
+                <span>Total Estimado:</span>
+                <span id="cart-total-price" class="text-base text-brandOrange">$0</span>
+            </div>
+
+            <button onclick="sendWhatsAppOrder()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-xs py-3 rounded-xl shadow transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Enviar Pedido a WhatsApp</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 12. MODAL ASISTENTE INTERACTIVO -->
+    <div id="assistant-modal-backdrop" onclick="closeAssistant()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+
+    <div id="assistant-modal" class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[92%] max-w-md bg-white rounded-2xl shadow-2xl z-50 hidden flex-col overflow-hidden border border-slate-200">
+        <div id="assistant-header" class="p-4 bg-brandDark text-white flex items-center justify-between border-b border-slate-800">
+            <div class="flex items-center gap-3">
+                <div id="assistant-icon" class="w-9 h-9 rounded-xl bg-brandOrange flex items-center justify-center text-white font-bold shrink-0">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+                <div>
+                    <h3 id="assistant-title" class="font-black text-sm text-white leading-tight">Asistente de Pedidos</h3>
+                    <p id="assistant-subtitle" class="text-[10px] text-slate-300">Cotización rápida por WhatsApp</p>
+                </div>
+            </div>
+            <button onclick="closeAssistant()" class="text-slate-400 hover:text-white text-lg p-1">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <div class="p-4 space-y-3 text-xs">
+            <div>
+                <label class="block font-extrabold text-slate-800 mb-1">1. Elegí tu producto:</label>
+                <select id="assistant-product-type" class="w-full p-2.5 bg-slate-100 border border-slate-300 rounded-xl font-semibold focus:outline-none focus:border-brandOrange text-slate-800 text-xs">
+                </select>
+            </div>
+
+            <div>
+                <label class="block font-extrabold text-slate-800 mb-1">2. Detallá tu idea o personalizado:</label>
+                <textarea id="assistant-detail" rows="3" placeholder="Ej: Quiero grabar el escudo de Boca Juniors y el nombre 'Matías'..." class="w-full p-2.5 bg-slate-100 border border-slate-300 rounded-xl focus:outline-none focus:border-brandOrange text-slate-800 text-xs"></textarea>
+            </div>
+
+            <div class="bg-orange-50 border border-orange-200 rounded-xl p-2.5 text-[11px] text-orange-900 flex items-start gap-2">
+                <i class="fa-solid fa-circle-info text-brandOrange text-sm shrink-0 mt-0.5"></i>
+                <span>Confirmamos tu pedido y costo total inmediatamente por WhatsApp.</span>
+            </div>
+        </div>
+
+        <div class="p-3.5 bg-slate-50 border-t border-slate-200">
+            <button onclick="sendAssistantWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-xs py-3 rounded-xl shadow transition flex items-center justify-center gap-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                <span>Enviar Consulta Directa</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->         
+    <a href="https://wa.me/5493549430437?text=Hola!%20Tengo%20una%20consulta" target="_blank" class="fixed bottom-4 right-4 z-40 bg-emerald-500 hover:bg-emerald-600 text-white w-12 h-12 rounded-full shadow-2xl flex items-center justify-center text-xl transition transform hover:scale-110"> 
+        <i class="fa-brands fa-whatsapp"></i> 
+    </a> 
+
+    <!-- JAVASCRIPT Y CATÁLOGO COMPLETO -->
+    <script>
+        const products = [
+            { 
+                id: 1, 
+                name: "Termo Acero Inoxidable 1L", 
+                category: "termos", 
+                badge: "Grabado Láser", 
+                price: 28500, 
+                desc: "Doble pared de acero térmico. Incluye grabado personalizado a elección.", 
+                image: "1000722353_42ca676fe5bd488f733a20abfa3fdb08-4_8_2026, 01_07_19.jpg?auto=format&fit=crop&w=400&q=80" 
+            },
+            { 
+                id: 2, 
+                name: "Mate Térmico con Bombilla", 
+                category: "termos", 
+                badge: "Grabado Láser", 
+                price: 19500, 
+                desc: "Acero inoxidable con acabado mate. No altera el gusto ni junta hongos.", 
+                image: "mate grabado.jpg" 
+            },
+            { 
+                id: 3, 
+                name: "Remera Deportiva Personalizada", 
+                category: "textil", 
+                badge: "Sublimación Full Color", 
+                price: 14800, 
+                desc: "Poliéster técnico respirable. Estampado total en frente y espalda.", 
+                image: "image-0.jpg" 
+            },
+            { 
+                id: 4, 
+                name: "Vaso Térmico 500ml con Tapa", 
+                category: "termos", 
+                badge: "Grabado Láser", 
+                price: 16200, 
+                desc: "Ideal para café o bebidas frías. Tapa antiderrame y grabado indeleble.", 
+                image: "grabado laser.jpeg" 
+            },
+            { 
+                id: 5, 
+                name: "Llavero de Acero Grabado", 
+                category: "accesorios", 
+                badge: "Grabado Láser", 
+                price: 4800, 
+                desc: "Presentación elegante. Grabado de ambas caras con logo o iniciales.", 
+                image: "images (2).jpeg" 
+            },
+            { 
+                id: 6, 
+                name: "Gorra Trucker Personalizada", 
+                category: "textil", 
+                badge: "Sublimación / Parche", 
+                price: 8500, 
+                desc: "Frente acolchado blanco o a color, red trasera respirable.", 
+                image: "images (3).jpeg" 
+            },
+            { 
+                id: 7, 
+                name: "Chopp Térmico cervecero 700ml", 
+                category: "accesorios", 
+                badge: "Grabado Láser", 
+                price: 17000, 
+                desc: "Conserva la cerveza helada por horas. Manija ergonómica.", 
+                image: "images (4).jpeg" 
+            },
+            { 
+                id: 8, 
+                name: "Kit Matero Corporativo Premium", 
+                category: "corporativo", 
+                badge: "Combo Corporativo", 
+                price: 52000, 
+                desc: "Incluye Termo 1L + Mate Acero + Bombilla + Caja personalizada.", 
+                image: "images (5).jpeg" 
+            }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+        let currentAssistantType = '';
+
+        document.addEventListener('DOMContentLoaded', () => { renderProducts(); });
+
+        /* ASISTENTE EMERGENTE */
+        function openAssistant(type) {
+            currentAssistantType = type;
+            const modal = document.getElementById('assistant-modal');
+            const backdrop = document.getElementById('assistant-modal-backdrop');
+            const title = document.getElementById('assistant-title');
+            const subtitle = document.getElementById('assistant-subtitle');
+            const select = document.getElementById('assistant-product-type');
+            const icon = document.getElementById('assistant-icon');
+
+            if (type === 'sublimacion') {
+                title.innerText = "Asistente de Sublimación";
+                subtitle.innerText = "Estampados full color";
+                icon.className = "w-9 h-9 rounded-xl bg-brandOrange flex items-center justify-center text-white font-bold shrink-0";
+                icon.innerHTML = '<i class="fa-solid fa-shirt text-sm"></i>';
+                select.innerHTML = `
+                    <option value="Remera Deportiva Personalizada">Remera Deportiva Personalizada</option>
+                    <option value="Gorra Trucker Personalizada">Gorra Trucker Personalizada</option>
+                    <option value="Taza o Tazón Personalizado">Taza / Tazón cerámico</option>
+                    <option value="Indumentaria Corporativa">Indumentaria Corporativa</option>
+                    <option value="Otro Producto Sublimado">Otro producto personalizado</option>
+                `;
+            } else {
+                title.innerText = "Asistente de Grabado Láser";
+                subtitle.innerText = "Grabados indelebles en acero";
+                icon.className = "w-9 h-9 rounded-xl bg-brandDark flex items-center justify-center text-amber-400 font-bold shrink-0 border border-slate-700";
+                icon.innerHTML = '<i class="fa-solid fa-bolt-lightning text-sm"></i>';
+                select.innerHTML = `
+                    <option value="Termo Acero Inoxidable 1L">Termo Acero Inoxidable 1L</option>
+                    <option value="Mate Térmico con Bombilla">Mate Térmico con Bombilla</option>
+                    <option value="Vaso Térmico 500ml con Tapa">Vaso Térmico 500ml</option>
+                    <option value="Chopp Térmico cervecero 700ml">Chopp Térmico Cervecero</option>
+                    <option value="Llavero de Acero Grabado">Llavero de Acero Grabado</option>
+                    <option value="Kit Matero Corporativo Premium">Kit Matero Corporativo</option>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            backdrop.classList.remove('hidden');
+        }
+
+        function closeAssistant() {
+            const modal = document.getElementById('assistant-modal');
+            const backdrop = document.getElementById('assistant-modal-backdrop');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            backdrop.classList.add('hidden');
+        }
+
+        function sendAssistantWhatsApp() {
+            const product = document.getElementById('assistant-product-type').value;
+            const detail = document.getElementById('assistant-detail').value.trim();
+            const phone = "5493549430437";
+
+            let tech = currentAssistantType === 'sublimacion' ? 'SUBLIMACIÓN FULL COLOR' : 'GRABADO LÁSER';
+
+            let msg = `👋 *¡Hola! Quisiera realizar una consulta directa sobre ${tech}:*\n\n`;
+            msg += `📌 *Producto:* ${product}\n`;
+            if (detail) {
+                msg += `✍️ *Diseño / Grabado:* "${detail}"\n\n`;
+            } else {
+                msg += `✍️ *Consulta:* Quisiera consultar sobre disponibilidad y cotización.\n\n`;
+            }
+            msg += `¡Muchas gracias!`;
+
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(msg)}`, '_blank');
+            closeAssistant();
+        }
+
+        /* CATÁLOGO Y FILTROS */
+        function setCategory(cat, element) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.className = "cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-3.5 py-2 rounded-xl text-xs font-bold";
+            });
+            if (element) {
+                element.className = "cat-btn shrink-0 bg-brandDark text-white px-3.5 py-2 rounded-xl text-xs font-bold shadow-sm";
+            }
+            filterProducts();
+        }
+
+        function renderProducts() {
+            const container = document.getElementById('products-grid');
+            const searchVal = document.getElementById('search-input').value.toLowerCase();
+
+            const filtered = products.filter(p => {
+                const matchCategory = currentCategory === 'all' || p.category === currentCategory;
+                const matchSearch = p.name.toLowerCase().includes(searchVal) || p.desc.toLowerCase().includes(searchVal);
+                return matchCategory && matchSearch;
+            });
+
+            if (filtered.length === 0) {
+                container.innerHTML = `
+                    <div class="col-span-full text-center py-8 text-slate-400 bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                        <i class="fa-solid fa-box-open text-3xl mb-1 text-slate-300"></i>
+                        <p class="text-xs font-semibold">No se encontraron productos.</p>
+                    </div>`;
+                return;
+            }
+
+            container.innerHTML = filtered.map(p => `
+                <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 shadow-sm hover:border-slate-300 transition flex flex-col justify-between"> 
+                    <div> 
+                        <div class="h-40 bg-white rounded-lg mb-2 overflow-hidden border border-slate-200 relative">
+                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover">
+                            <span class="absolute top-1.5 left-1.5 bg-brandDark/90 text-white text-[9px] font-bold px-1.5 py-0.5 rounded border border-slate-700">${p.badge}</span>
+                        </div>                             
+                        <h3 class="font-extrabold text-xs text-slate-900 leading-snug mb-1">${p.name}</h3> 
+                        <p class="text-[10px] text-slate-500 mb-2 leading-tight">${p.desc}</p> 
+                    </div>                         
+                    <div class="pt-2 border-t border-slate-200"> 
+                        <span class="text-base font-black text-slate-900 block mb-2">$${p.price.toLocaleString('es-AR')}</span> 
+                        <div class="flex gap-1.5">
+                            <button onclick="addToCart(${p.id})" class="flex-1 bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold text-[11px] py-2 rounded-lg shadow transition text-center flex items-center justify-center gap-1"> 
+                                <i class="fa-solid fa-cart-plus"></i> <span>Agregar</span>
+                            </button> 
+                            <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20encargar%20el%20producto:%20${encodeURIComponent(p.name)}" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white px-2.5 py-2 rounded-lg transition shadow flex items-center justify-center text-xs" title="Pedir por WhatsApp">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>                         
+                </div>
+            `).join('');
+        }
+
+        function filterProducts() { renderProducts(); }
+
+        /* CARRITO DE COMPRAS */
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            const exist = cart.find(item => item.id === id);
+            if (exist) { exist.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
+            updateCartUI();
+            toggleCart(true);
+        }
+
+        function changeQty(id, delta) {
+            const item = cart.find(i => i.id === id);
+            if (item) {
+                item.qty += delta;
+                if (item.qty <= 0) { cart = cart.filter(i => i.id !== id); }
+            }
+            updateCartUI();
+        }
+
+        function removeItem(id) {
+            cart = cart.filter(i => i.id !== id);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cart-count-badge').innerText = totalQty;
+
+            const container = document.getElementById('cart-items-container');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="h-full flex flex-col items-center justify-center text-slate-400 text-center p-6">
+                        <i class="fa-solid fa-cart-flatbed text-3xl mb-1 text-slate-300"></i>
+                        <p class="text-xs font-bold text-slate-600">Tu carrito está vacío</p>
+                    </div>`;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex items-center gap-2.5 bg-slate-50 p-2 rounded-xl border border-slate-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-10 h-10 rounded-lg object-cover border border-slate-200 shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-900 truncate">${item.name}</h4>
+                            <p class="text-[10px] text-slate-500">$${item.price.toLocaleString('es-AR')}</p>
+                            <div class="flex items-center gap-1.5 mt-1">
+                                <button onclick="changeQty(${item.id}, -1)" class="w-4 h-4 bg-white border border-slate-300 rounded text-slate-700 font-bold text-[10px] flex items-center justify-center">-</button>
+                                <span class="text-xs font-bold text-slate-800">${item.qty}</span>
+                                <button onclick="changeQty(${item.id}, 1)" class="w-4 h-4 bg-white border border-slate-300 rounded text-slate-700 font-bold text-[10px] flex items-center justify-center">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-bold text-xs text-slate-900 block">$${(item.price * item.qty).toLocaleString('es-AR')}</span>
+                            <button onclick="removeItem(${item.id})" class="text-red-500 text-[10px] mt-0.5"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>`).join('');
+            }
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('cart-total-price').innerText = `$${total.toLocaleString('es-AR')}`;
+        }
+
+        function toggleCart(forceOpen = false) {
+            const drawer = document.getElementById('cart-drawer');
+            const backdrop = document.getElementById('cart-drawer-backdrop');
+            if (forceOpen || drawer.classList.contains('translate-x-full')) {
+                drawer.classList.remove('translate-x-full');
+                backdrop.classList.remove('hidden');
+            } else {
+                drawer.classList.add('translate-x-full');
+                backdrop.classList.add('hidden');
+            }
+        }
+
+        function sendWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Agregá al menos un producto al pedido antes de enviar.");
+                return;
+            }
+
+            const phone = "5493549430437";
+            let message = "👋 *¡Hola! Quiero realizar un pedido desde la web:*\n\n";
+
+            cart.forEach((item, idx) => {
+                message += `*${idx + 1}. ${item.name}*\n`;
+                message += `   • Cantidad: ${item.qty}\n`;
+                message += `   • Subtotal: $${(item.price * item.qty).toLocaleString('es-AR')}\n\n`;
+            });
+
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            message += `💰 *TOTAL ESTIMADO:* $${total.toLocaleString('es-AR')}\n\n`;
+
+            const note = document.getElementById('custom-note').value.trim();
+            if (note) {
+                message += `✍️ *Detalles / Grabado Personalizado:*\n"${note}"\n\n`;
+            }
+
+            message += "Quedo a la espera para coordinar pago y entrega. ¡Muchas gracias!";
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    </script>
+</body>
+</html>
