@@ -60,9 +60,8 @@
             
             <!-- LOGO DEL NEGOCIO -->
             <a href="index.html" class="flex items-center gap-3 shrink-0 group"> 
-                <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 border-2 border-brandOrange overflow-hidden shrink-0 flex items-center justify-center">
-                    <img src="logo.jpg" alt="Logo Todo Personalizado" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">
-                </div>
+                <div class="w-12 h-12 sm:w-1 sm:h-18 rounded-full bg-slate-900 border-2 border-brandOrange overflow-hidden shrink-0 flex items-center justify-center">
+                    <img src="IMG-20260731-WA0095 (1).png" alt="Logo Todo Personalizado" width="208" height="184" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">                </div>
                 <span class="Estilo2 text-lg sm:text-2xl">Todo Personalizado</span>
             </a>
 
@@ -75,7 +74,7 @@
             </nav>                 
 
             <!-- Botón Carrito Mobile -->                 
-            <button onclick="toggleCart()" class="lg:hidden relative bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl font-extrabold text-sm flex items-center gap-2 shadow shrink-0">
+            <button onClick="toggleCart()" class="lg:hidden relative bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl font-extrabold text-sm flex items-center gap-2 shadow shrink-0">
                 <i class="fa-solid fa-cart-shopping text-base"></i>
                 <span>Mi Pedido</span>
                 <span id="cart-count-badge-mobile" class="bg-white text-brandDark font-black text-xs px-2 py-0.5 rounded-full">0</span>
@@ -150,7 +149,7 @@
 
                         <!-- Tarjetas de Acceso al Chat Sergio -->
                         <div class="grid grid-cols-2 gap-3"> 
-                            <div onclick="openAIChatWithTopic('sublimacion')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
+                            <div onClick="openAIChatWithTopic('sublimacion')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
                                 <div class="h-24 sm:h-28 rounded-lg overflow-hidden relative mb-2">
                                     <img src="image-0.jpg" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                     <span class="absolute top-1 left-1 bg-brandDark/90 text-white text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700">SUBLIMACIÓN</span>
@@ -160,7 +159,7 @@
                                 </button>
                             </div>
 
-                            <div onclick="openAIChatWithTopic('laser')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
+                            <div onClick="openAIChatWithTopic('laser')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
                                 <div class="h-24 sm:h-28 rounded-lg overflow-hidden relative mb-2">
                                     <img src="grabado laser.jpeg" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                                     <span class="absolute top-1 left-1 bg-brandDark/90 text-white text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700">GRABADO LÁSER</span>
@@ -246,11 +245,11 @@
 
                     <!-- Botones de Filtro por Categoría -->
                     <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="category-buttons">
-                        <button onclick="setCategory('all', this)" class="cat-btn shrink-0 bg-brandDark text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm">Todos</button>
-                        <button onclick="setCategory('termos', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Termos &amp; Mates</button>
-                        <button onclick="setCategory('textil', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Textil &amp; Deporte</button>
-                        <button onclick="setCategory('accesorios', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Accesorios</button>
-                        <button onclick="setCategory('corporativo', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Corporativo</button>
+                        <button onClick="setCategory('all', this)" class="cat-btn shrink-0 bg-brandDark text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm">Todos</button>
+                        <button onClick="setCategory('termos', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Termos &amp; Mates</button>
+                        <button onClick="setCategory('textil', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Textil &amp; Deporte</button>
+                        <button onClick="setCategory('accesorios', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Accesorios</button>
+                        <button onClick="setCategory('corporativo', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Corporativo</button>
                     </div>
                 </div>
 
@@ -308,7 +307,7 @@
                     <span id="cart-total-price-desktop" class="text-xl text-brandOrange font-black">$0</span>
                 </div>
 
-                <button onclick="sendWhatsAppOrder('desktop')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
+                <button onClick="sendWhatsAppOrder('desktop')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
                     <i class="fa-brands fa-whatsapp text-xl"></i>
                     <span>Finalizar por WhatsApp</span>
                 </button>
@@ -325,7 +324,7 @@
     </footer>         
 
     <!-- CARRITO DESPLEGABLE EN MOBILE (Drawer) -->
-    <div id="cart-drawer-backdrop" onclick="toggleCart()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity lg:hidden"></div>
+    <div id="cart-drawer-backdrop" onClick="toggleCart()" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden transition-opacity lg:hidden"></div>
     
     <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-96 bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col lg:hidden">
         <div class="p-4 bg-brandDark text-white flex items-center justify-between border-b border-slate-800">
@@ -333,7 +332,7 @@
                 <i class="fa-solid fa-cart-shopping text-brandOrange"></i>
                 <span>Mi Pedido</span>
             </div>
-            <button onclick="toggleCart()" class="text-slate-400 hover:text-white text-xl px-2">
+            <button onClick="toggleCart()" class="text-slate-400 hover:text-white text-xl px-2">
                 <i class="fa-solid fa-xmark"></i>
             </button>
         </div>
@@ -353,7 +352,7 @@
                 <span id="cart-total-price-mobile" class="text-lg text-brandOrange font-black">$0</span>
             </div>
 
-            <button onclick="sendWhatsAppOrder('mobile')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
+            <button onClick="sendWhatsAppOrder('mobile')" class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-black text-sm py-3.5 rounded-xl shadow transition flex items-center justify-center gap-2">
                 <i class="fa-brands fa-whatsapp text-xl"></i>
                 <span>Enviar Pedido a WhatsApp</span>
             </button>
@@ -369,14 +368,14 @@
                 <span id="cart-total-bar-mobile" class="text-sm font-black text-white">$0</span>
             </div>
         </div>
-        <button onclick="toggleCart()" class="bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow flex items-center gap-2">
+        <button onClick="toggleCart()" class="bg-brandOrange hover:bg-brandOrangeHover text-white font-extrabold text-xs sm:text-sm px-4 py-2.5 rounded-xl shadow flex items-center gap-2">
             <span>Ver Mi Pedido</span>
             <span id="cart-count-badge-bar" class="bg-white text-brandDark font-black text-xs px-2 py-0.5 rounded-full">0</span>
         </button>
     </div>
 
     <!-- WIDGET FLOTANTE: ASISTENTE VIRTUAL SERGIO -->
-    <div id="ai-chat-button" onclick="toggleAIChat()" class="fixed bottom-16 lg:bottom-6 right-4 bg-brandOrange hover:bg-brandOrangeHover text-white p-4 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center border-2 border-white">
+    <div id="ai-chat-button" onClick="toggleAIChat()" class="fixed bottom-16 lg:bottom-6 right-4 bg-brandOrange hover:bg-brandOrangeHover text-white p-4 rounded-full shadow-2xl cursor-pointer hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center border-2 border-white">
         <i class="fa-solid fa-user-gear text-2xl"></i>
     </div>
 
@@ -392,7 +391,7 @@
                     <p class="text-xs text-slate-300 mt-1">Atención al toque de Todo Personalizado</p>
                 </div>
             </div>
-            <button onclick="toggleAIChat()" class="text-slate-400 hover:text-white p-1">
+            <button onClick="toggleAIChat()" class="text-slate-400 hover:text-white p-1">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
         </div>
@@ -406,8 +405,8 @@
 
         <!-- Campo de Entrada -->
         <div class="p-3 bg-white border-t border-slate-200 flex gap-2">
-            <input type="text" id="ai-user-input" placeholder="Escribí tu consulta acá..." onkeypress="handleKeyPress(event)" class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:border-brandOrange text-slate-800">
-            <button onclick="sendAIMessage()" class="bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition">
+            <input type="text" id="ai-user-input" placeholder="Escribí tu consulta acá..." onKeyPress="handleKeyPress(event)" class="flex-1 bg-slate-100 border border-slate-300 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm focus:outline-none focus:border-brandOrange text-slate-800">
+            <button onClick="sendAIMessage()" class="bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition">
                 <i class="fa-solid fa-paper-plane"></i>
             </button>
         </div>
