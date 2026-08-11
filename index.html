@@ -45,13 +45,19 @@
 </head>     
 <body class="bg-slate-100 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white relative pb-24 lg:pb-10"> 
 
-    <!-- 1. TOP BAR -->         
+    <!-- 1. TOP BAR CON BOTÓN ADMIN CON CLAVE -->         
     <div class="text-center px-3 py-2 font-semibold text-xs sm:text-sm text-white bg-brandOrange flex justify-between sm:justify-center items-center gap-2">
         <span class="truncate">🚚 <strong>Envío GRATIS</strong> en compras elegibles</span>
         <span class="hidden sm:inline">|</span>
-        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/20 px-2.5 py-1 rounded-lg text-xs shrink-0">
-            <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52
-        </a>
+        <div class="flex items-center gap-2">
+            <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/20 px-2.5 py-1 rounded-lg text-xs shrink-0">
+                <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52
+            </a>
+            <!-- Botón Admin protegido por clave -->
+            <button onclick="openAdminModal()" class="hover:bg-black/30 bg-black/20 text-white font-bold px-2.5 py-1 rounded-lg text-xs flex items-center gap-1 shrink-0 transition" title="Administrar Oferta Flash">
+                <i class="fa-solid fa-lock text-amber-300"></i> Admin
+            </button>
+        </div>
     </div>         
 
     <!-- 2. HEADER -->         
@@ -61,7 +67,8 @@
             <!-- LOGO DEL NEGOCIO -->
             <a href="index.html" class="flex items-center gap-3 shrink-0 group"> 
                 <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 border-2 border-brandOrange overflow-hidden shrink-0 flex items-center justify-center">
-                    <img src="IMG-20260731-WA0095 (1).png" alt="Logo Todo Personalizado" width="208" height="184" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">                </div>
+                    <img src="IMG-20260731-WA0095 (1).png" alt="Logo Todo Personalizado" width="208" height="184" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">                
+                </div>
                 <span class="Estilo2 text-lg sm:text-2xl">Todo Personalizado</span>
             </a>
 
@@ -88,7 +95,7 @@
         <!-- CONTENIDO PRINCIPAL -->
         <main class="flex-1 min-w-0 w-full space-y-6">
 
-            <!-- 3. HERO CON CARTEL DE NEUROVENTA (OPCIÓN 2 APLICADA) -->         
+            <!-- 3. HERO CON CARTEL DE OFERTA FLASH (EFECTO RESTAURADO Y MEJORADO) -->         
             <section class="bg-brandDark text-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-10 shadow-lg border border-slate-800 overflow-hidden"> 
                 <div class="flex flex-col lg:flex-row gap-6 items-center"> 
                     
@@ -114,30 +121,36 @@
                         </div>                     
                     </div>                 
 
-                    <!-- Lado Derecho: CARTEL DE NEUROVENTA CON IMAGEN 'oferta-flash.jpg' -->                 
+                    <!-- Lado Derecho: TARJETA DE OFERTA FLASH (EFECTOS DE LUZ Y FONDO DINÁMICO) -->                 
                     <div class="w-full lg:w-1/2 space-y-3"> 
-                        <div class="relative h-60 sm:h-64 w-full rounded-2xl overflow-hidden border-2 border-brandOrange shadow-2xl group">
+                        <div class="relative h-64 sm:h-72 w-full bg-slate-950 rounded-2xl overflow-hidden border-2 border-brandOrange shadow-[0_0_25px_rgba(255,90,0,0.3)] group flex items-center justify-center">
                             
-                            <!-- IMAGEN REEMPLAZABLE: Solo actualizá el archivo 'oferta-flash.jpg' en tu servidor -->
-                            <img src="oferta-flash.jpg" alt="Oferta Flash Todo Personalizado" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x350/0A1128/FF5A00?text=%F0%9F%94%A5+OFERTA+FLASH+DEL+D%C3%81A'">
+                            <!-- FONDO AMBIENTAL DESENFOCADO (Le da dinamismo visual sin tapar la foto) -->
+                            <img id="flash-img-bg" src="oferta-flash.jpg" class="absolute inset-0 w-full h-full object-cover blur-md opacity-40 scale-110 pointer-events-none transition duration-700 group-hover:scale-125 group-hover:opacity-60" alt="">
+
+                            <!-- FOTO PRINCIPAL NÍTIDA COMPLETA (Con leve animación al pasar el cursor) -->
+                            <img id="flash-img" src="oferta-flash.jpg" alt="Oferta Flash Todo Personalizado" class="relative z-10 max-h-full max-w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x350/0A1128/FF5A00?text=%F0%9F%94%A5+OFERTA+FLASH+DEL+D%C3%81A'">
                             
-                            <!-- ETIQUETAS FLOTANTES DE NEUROVENTA -->
-                            <div class="absolute top-3 left-3 right-3 flex justify-between items-center gap-2 z-10">
-                                <span class="bg-red-600 text-white font-black text-xs sm:text-sm px-3 py-1.5 rounded-full shadow-lg border border-white/20 flex items-center gap-1.5 animate-pulse">
+                            <!-- DEGRADADO DE BRILLO SUPERIOR -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 z-10 pointer-events-none"></div>
+
+                            <!-- ETIQUETAS FLOTANTES (Con efecto Glassmorphic) -->
+                            <div class="absolute top-3 left-3 right-3 flex justify-between items-center gap-2 z-20 pointer-events-none">
+                                <span id="flash-badge" class="bg-red-600/90 backdrop-blur-md text-white font-black text-xs sm:text-sm px-3 py-1.5 rounded-full shadow-lg border border-white/20 flex items-center gap-1.5 animate-pulse">
                                     <i class="fa-solid fa-bolt text-yellow-300"></i> ¡OFERTA FLASH!
                                 </span>
-                                <span class="bg-black/80 backdrop-blur-md text-amber-400 font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg border border-amber-500/30">
+                                <span id="flash-timer" class="bg-black/80 backdrop-blur-md text-amber-400 font-black text-[11px] sm:text-xs px-2.5 py-1 rounded-lg border border-amber-500/30 shadow">
                                     🔥 SOLO POR HOY
                                 </span>
                             </div>
 
-                            <!-- TEXTO PERSUASIVO REDUCIDO + DIRECCIÓN EN LETRA MÁS PEQUEÑA -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/30 to-transparent flex flex-col justify-end p-2.5 sm:p-3 text-left">
-                                <p class="text-slate-200 text-[10px] sm:text-xs mb-1 leading-tight">
+                            <!-- TEXTO PERSUASIVO SOBRE DEGRADADO INFERIOR -->
+                            <div class="absolute inset-x-0 bottom-0 z-20 p-3.5 text-left">
+                                <p id="flash-text" class="text-slate-100 text-[11px] sm:text-xs mb-1.5 font-semibold leading-tight drop-shadow">
                                     Regalá algo que dura para siempre. Pocos cupos disponibles para entrega hoy.
                                 </p>
 
-                                <div class="pt-1.5 border-t border-white/20 flex items-center justify-between text-[9px] sm:text-[10px] text-slate-300 font-medium">
+                                <div class="pt-2 border-t border-white/20 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-300 font-medium">
                                     <span><i class="fa-solid fa-location-dot text-brandOrange mr-1"></i> Alsina 52, Cruz del Eje</span>
                                     <span class="text-emerald-400 font-bold flex items-center gap-1">
                                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping inline-block"></span> Taller Abierto
@@ -316,6 +329,53 @@
 
     </div>
 
+    <!-- MODAL DE ADMINISTRACIÓN DE OFERTA FLASH -->
+    <div id="admin-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 relative text-slate-800">
+            <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            
+            <h3 class="text-lg font-black text-slate-900 mb-1 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-brandOrange"></i> Panel de Administración
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Cambiá la foto y el texto de la Oferta Flash en vivo.</p>
+
+            <form onsubmit="saveAdminOffer(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Subir Imagen desde Celular/PC</label>
+                    <input type="file" id="admin-img-file" accept="image/*" class="w-full text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-300 file:mr-2 file:py-1 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-semibold file:bg-brandOrange file:text-white">
+                    <span class="block text-[10px] text-slate-400 mt-1">O indicá la ruta (por defecto: oferta-flash.jpg):</span>
+                    <input type="text" id="admin-img-url" placeholder="oferta-flash.jpg" class="w-full mt-1 p-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Cartel Flotante (Badge)</label>
+                    <input type="text" id="admin-badge" placeholder="¡OFERTA FLASH!" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Temporizador / Texto Corto</label>
+                    <input type="text" id="admin-timer" placeholder="🔥 SOLO POR HOY" class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">Texto Descriptivo</label>
+                    <textarea id="admin-text" rows="2" placeholder="Regalá algo que dura para siempre..." class="w-full p-2 bg-slate-50 border border-slate-300 rounded-lg text-xs font-semibold"></textarea>
+                </div>
+
+                <div class="flex gap-2 pt-2">
+                    <button type="submit" class="flex-1 bg-brandOrange hover:bg-brandOrangeHover text-white font-black text-xs py-2.5 rounded-xl transition shadow">
+                        Guardar Cambios
+                    </button>
+                    <button type="button" onclick="resetAdminOffer()" class="bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-xs px-3 py-2.5 rounded-xl transition">
+                        Restablecer Foto
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- FOOTER -->         
     <footer class="mt-12 text-slate-500 text-xs text-center max-w-7xl mx-auto px-4"> 
         <p class="font-bold text-slate-700 mb-1">Todo Personalizado - Grabado Láser &amp; Sublimación</p>
@@ -380,7 +440,7 @@
     </div>
 
     <!-- VENTANA DEL ASISTENTE SERGIO -->
-    <div id="ai-chat-window" class="fixed bottom-28 lg:bottom-20 right-3 sm:right-6 w-[94%] sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 hidden flex-col overflow-hidden max-h-[520px]">
+    <div id="ai-chat-window" class="fixed bottom-28 lg:bottom-20 right-3 sm:right-6 w-[90%] sm:w-96 bg-white rounded-2xl shadow-2xl border border-slate-200 z-50 hidden flex-col overflow-hidden max-h-[520px]">
         <div class="bg-brandDark text-white p-3.5 flex items-center justify-between border-b border-slate-800">
             <div class="flex items-center gap-2.5">
                 <div class="w-9 h-9 rounded-full bg-brandOrange flex items-center justify-center text-white text-sm font-bold">
@@ -412,8 +472,113 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT COMPLETO CON SERGIO Y CARRITO -->
+    <!-- JAVASCRIPT COMPLETO -->
     <script>
+        /* CONTRASEÑA DE ADMINISTRADOR */
+        const ADMIN_PASS = "tp2305";
+
+        /* ABRIR MODAL CON PROTECCIÓN DE CONTRASEÑA */
+        function openAdminModal() {
+            const userPassword = prompt("🔑 Ingrese la contraseña de Administrador:");
+            if (userPassword === null) return;
+
+            if (userPassword.trim() !== ADMIN_PASS) {
+                alert("❌ Contraseña incorrecta. Acceso denegado.");
+                return;
+            }
+
+            const modal = document.getElementById('admin-modal');
+            modal.classList.remove('hidden');
+
+            const savedData = localStorage.getItem('flashOfferConfig');
+            if (savedData) {
+                const offer = JSON.parse(savedData);
+                document.getElementById('admin-img-url').value = offer.imgUrl || '';
+                document.getElementById('admin-badge').value = offer.badge || '';
+                document.getElementById('admin-timer').value = offer.timer || '';
+                document.getElementById('admin-text').value = offer.text || '';
+            } else {
+                document.getElementById('admin-img-url').value = 'oferta-flash.jpg';
+                document.getElementById('admin-badge').value = '¡OFERTA FLASH!';
+                document.getElementById('admin-timer').value = '🔥 SOLO POR HOY';
+                document.getElementById('admin-text').value = 'Regalá algo que dura para siempre. Pocos cupos disponibles para entrega hoy.';
+            }
+        }
+
+        function closeAdminModal() {
+            document.getElementById('admin-modal').classList.add('hidden');
+        }
+
+        /* GESTIÓN LOCAL DE OFERTA FLASH */
+        function loadFlashOffer() {
+            const savedData = localStorage.getItem('flashOfferConfig');
+            if (savedData) {
+                try {
+                    const offer = JSON.parse(savedData);
+                    if (offer.img) {
+                        document.getElementById('flash-img').src = offer.img;
+                        const bgEl = document.getElementById('flash-img-bg');
+                        if (bgEl) bgEl.src = offer.img;
+                    }
+                    if (offer.badge) document.getElementById('flash-badge').innerHTML = `<i class="fa-solid fa-bolt text-yellow-300"></i> ${offer.badge}`;
+                    if (offer.timer) document.getElementById('flash-timer').innerText = offer.timer;
+                    if (offer.text) document.getElementById('flash-text').innerText = offer.text;
+                } catch(e) {
+                    console.error('Error al cargar oferta:', e);
+                }
+            } else {
+                document.getElementById('flash-img').src = 'oferta-flash.jpg';
+                const bgEl = document.getElementById('flash-img-bg');
+                if (bgEl) bgEl.src = 'oferta-flash.jpg';
+            }
+        }
+
+        function saveAdminOffer(e) {
+            e.preventDefault();
+            const fileInput = document.getElementById('admin-img-file');
+            const urlInput = document.getElementById('admin-img-url').value.trim();
+            const badge = document.getElementById('admin-badge').value.trim();
+            const timer = document.getElementById('admin-timer').value.trim();
+            const text = document.getElementById('admin-text').value.trim();
+
+            const processSave = (finalImg) => {
+                const offerData = {
+                    img: finalImg || 'oferta-flash.jpg',
+                    imgUrl: urlInput,
+                    badge: badge || '¡OFERTA FLASH!',
+                    timer: timer || '🔥 SOLO POR HOY',
+                    text: text || 'Regalá algo que dura para siempre.'
+                };
+                localStorage.setItem('flashOfferConfig', JSON.stringify(offerData));
+                loadFlashOffer();
+                closeAdminModal();
+                alert('¡Oferta Flash actualizada con éxito!');
+            };
+
+            if (fileInput.files && fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(evt) {
+                    processSave(evt.target.result);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                processSave(urlInput || 'oferta-flash.jpg');
+            }
+        }
+
+        function resetAdminOffer() {
+            localStorage.removeItem('flashOfferConfig');
+            document.getElementById('flash-img').src = 'oferta-flash.jpg';
+            const bgEl = document.getElementById('flash-img-bg');
+            if (bgEl) bgEl.src = 'oferta-flash.jpg';
+            
+            document.getElementById('flash-badge').innerHTML = `<i class="fa-solid fa-bolt text-yellow-300"></i> ¡OFERTA FLASH!`;
+            document.getElementById('flash-timer').innerText = '🔥 SOLO POR HOY';
+            document.getElementById('flash-text').innerText = 'Regalá algo que dura para siempre. Pocos cupos disponibles para entrega hoy.';
+            closeAdminModal();
+            alert('Oferta restablecida a la imagen inicial oferta-flash.jpg.');
+        }
+
         /* ASISTENTE VIRTUAL LOCAL: SERGIO */
         const BOT_NAME = "Sergio";
 
@@ -559,6 +724,7 @@
         document.addEventListener('DOMContentLoaded', () => { 
             renderProducts(); 
             updateCartUI(); 
+            loadFlashOffer();
         });
 
         function setCategory(cat, element) {
