@@ -59,9 +59,9 @@
             <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/20 px-2.5 py-1 rounded-lg text-xs shrink-0">
                 <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52
             </a>
-            <!-- Botón Admin protegido por clave -->
+            <!-- Botón Admin protegido por clave para la Oferta Flash -->
             <button onclick="openAdminModal()" class="hover:bg-black/30 bg-black/20 text-white font-bold px-2.5 py-1 rounded-lg text-xs flex items-center gap-1 shrink-0 transition" title="Administrar Oferta Flash">
-                <i class="fa-solid fa-lock text-amber-300"></i> Admin
+                <i class="fa-solid fa-lock text-amber-300"></i> Admin Flash
             </button>
         </div>
     </div>         
@@ -170,7 +170,7 @@
                         <div class="grid grid-cols-2 gap-3"> 
                             <div onClick="openAIChatWithTopic('sublimacion')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
                                 <div class="h-24 sm:h-28 rounded-lg overflow-hidden relative mb-2">
-                                    <img src="image-0.jpg" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                    <img src="image-0.jpg" alt="Sublimación" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0A1128/FF5A00?text=Sublimacion'">
                                     <span class="absolute top-1 left-1 bg-brandDark/90 text-white text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700">SUBLIMACIÓN</span>
                                 </div>
                                 <button class="w-full bg-brandOrange text-white text-xs font-extrabold py-2 rounded-lg flex items-center justify-center gap-1.5">
@@ -180,7 +180,7 @@
 
                             <div onClick="openAIChatWithTopic('laser')" class="bg-slate-900 border border-slate-700 rounded-xl p-3 flex flex-col justify-between cursor-pointer hover:border-brandOrange transition group"> 
                                 <div class="h-24 sm:h-28 rounded-lg overflow-hidden relative mb-2">
-                                    <img src="grabado laser.jpeg" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                                    <img src="grabado laser.jpeg" alt="Grabado Láser" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x200/0A1128/FF5A00?text=Grabado+Laser'">
                                     <span class="absolute top-1 left-1 bg-brandDark/90 text-white text-[10px] font-bold px-2 py-0.5 rounded border border-slate-700">GRABADO LÁSER</span>
                                 </div>
                                 <button class="w-full bg-slate-800 border border-slate-600 text-white text-xs font-extrabold py-2 rounded-lg flex items-center justify-center gap-1.5">
@@ -207,7 +207,7 @@
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="grabado laser.jpeg" alt="Termo Grabado Personalizado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="grabado laser.jpeg" alt="Termo Grabado Personalizado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Termo'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Grabado en Acero</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Me%20interesa%20un%20grabado%20similar%20al%20de%20la%20galeria" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -217,7 +217,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="mate grabado.jpg" alt="Mate de Acero Grabado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="mate grabado.jpg" alt="Mate de Acero Grabado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Mate'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Mates Térmicos</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20mate%20grabado" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -227,7 +227,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="image-0.jpg" alt="Indumentaria Sublimada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="image-0.jpg" alt="Indumentaria Sublimada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Ropa'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Ropa &amp; Deportes</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20sublimado" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -237,7 +237,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="images (5).jpeg" alt="Merchandising Institucional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                            <img src="images (5).jpeg" alt="Merchandising Institucional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Empresas'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Kits Empresariales</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20presupuesto%20empresarial" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -343,9 +343,9 @@
             </button>
             
             <h3 class="text-lg font-black text-slate-900 mb-1 flex items-center gap-2">
-                <i class="fa-solid fa-sliders text-brandOrange"></i> Panel de Administración (Nube)
+                <i class="fa-solid fa-sliders text-brandOrange"></i> Panel de Administración (Oferta Flash)
             </h3>
-            <p class="text-xs text-slate-500 mb-4">Cambiá la foto desde tu cel o PC y se actualizará para todos en tiempo real.</p>
+            <p class="text-xs text-slate-500 mb-4">Cambiá la foto o textos desde tu cel o PC y se actualizará para todos en vivo.</p>
 
             <form onsubmit="saveAdminOffer(event)" class="space-y-3">
                 <div>
@@ -483,9 +483,7 @@
         /* CONTRASEÑA DE ADMINISTRADOR */
         const ADMIN_PASS = "tp2305";
 
-        /* -------------------------------------------------------------
-           CONFIGURACIÓN DE FIREBASE (TUS CLAVES REALES CONFIGURADAS)
-        ------------------------------------------------------------- */
+        /* CONFIGURACIÓN DE FIREBASE */
         const firebaseConfig = {
             apiKey: "AIzaSyCJTMf7y1jBI4c1Ajx1fnB4YoEiPqU3snk",
             authDomain: "todo-personalizado.firebaseapp.com",
@@ -508,7 +506,7 @@
             console.error("Error al inicializar Firebase:", e);
         }
 
-        /* ESCUCHADOR EN TIEMPO REAL (Cambia la foto en todas las compus/celus al instante) */
+        /* ESCUCHADOR EN TIEMPO REAL (Actualiza la Oferta Flash para todos los usuarios al instante) */
         function initRealtimeFlashOffer() {
             if (!db) return;
             db.collection('settings').doc('flashOffer').onSnapshot((doc) => {
@@ -528,7 +526,7 @@
             });
         }
 
-        /* ABRIR MODAL ADMIN */
+        /* ABRIR MODAL ADMIN CON PRE-CARGA DE DATOS ACTUALES */
         function openAdminModal() {
             const userPassword = prompt("🔑 Ingrese la contraseña de Administrador:");
             if (userPassword === null) return;
@@ -538,6 +536,17 @@
                 return;
             }
 
+            // Precargar los datos actuales en el formulario
+            const badgeEl = document.getElementById('flash-badge');
+            const timerEl = document.getElementById('flash-timer');
+            const textEl = document.getElementById('flash-text');
+            const imgEl = document.getElementById('flash-img');
+
+            if (badgeEl) document.getElementById('admin-badge').value = badgeEl.innerText.replace(/[\n\r]/g, '').trim();
+            if (timerEl) document.getElementById('admin-timer').value = timerEl.innerText.trim();
+            if (textEl) document.getElementById('admin-text').value = textEl.innerText.trim();
+            if (imgEl && imgEl.src) document.getElementById('admin-img-url').value = imgEl.getAttribute('src') || '';
+
             const modal = document.getElementById('admin-modal');
             modal.classList.remove('hidden');
         }
@@ -546,7 +555,7 @@
             document.getElementById('admin-modal').classList.add('hidden');
         }
 
-        /* GUARDAR EN LA NUBE (FIREBASE STORAGE + FIRESTORE) */
+        /* GUARDAR OFERTA FLASH EN LA NUBE (FIREBASE STORAGE + FIRESTORE) */
         async function saveAdminOffer(e) {
             e.preventDefault();
             
@@ -569,7 +578,7 @@
 
                 let finalImgUrl = urlInput || 'oferta-flash.jpg';
 
-                // Si subió archivo de foto desde el celu o PC
+                // Si se seleccionó un archivo de foto local
                 if (fileInput.files && fileInput.files[0]) {
                     const file = fileInput.files[0];
                     const storageRef = storage.ref(`flash-offers/${Date.now()}_${file.name}`);
@@ -577,7 +586,7 @@
                     finalImgUrl = await snapshot.ref.getDownloadURL();
                 }
 
-                // Guardar datos en la base de datos central
+                // Guardar datos centralizados
                 await db.collection('settings').doc('flashOffer').set({
                     img: finalImgUrl,
                     badge: badge || '¡OFERTA FLASH!',
