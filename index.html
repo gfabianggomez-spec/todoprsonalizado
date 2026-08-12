@@ -35,7 +35,6 @@
     <!-- FIREBASE SDKs (Compatibilidad CDN para HTML directo) -->
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-storage-compat.js"></script>
 
     <style>
         .Estilo2 { 
@@ -335,7 +334,7 @@
 
     </div>
 
-    <!-- MODAL DE ADMINISTRACIÓN DE OFERTA FLASH (NUBE) -->
+    <!-- MODAL DE ADMINISTRACIÓN DE OFERTA FLASH (IMGBB + FIRESTORE) -->
     <div id="admin-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 relative text-slate-800">
             <button onclick="closeAdminModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-xl font-bold">
@@ -478,12 +477,15 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT COMPLETO -->
+    <!-- JAVASCRIPT COMPLETO INTEGRADO CON IMGBB -->
     <script>
         /* CONTRASEÑA DE ADMINISTRADOR */
         const ADMIN_PASS = "tp2305";
 
-        /* CONFIGURACIÓN DE FIREBASE */
+        /* CLAVE API DE IMGBB */
+        const IMGBB_API_KEY = "5f17f35c87006fa78329e3284351214a";
+
+        /* CONFIGURACIÓN DE FIREBASE (FIRESTORE) */
         const firebaseConfig = {
             apiKey: "AIzaSyCJTMf7y1jBI4c1Ajx1fnB4YoEiPqU3snk",
             authDomain: "todo-personalizado.firebaseapp.com",
@@ -494,13 +496,11 @@
             measurementId: "G-8FHSE76MHH"
         };
 
-        // Inicializar Firebase
+        // Inicializar Firebase Firestore
         let db = null;
-        let storage = null;
         try {
             firebase.initializeApp(firebaseConfig);
             db = firebase.firestore();
-            storage = firebase.storage();
             initRealtimeFlashOffer();
         } catch(e) {
             console.error("Error al inicializar Firebase:", e);
@@ -555,12 +555,12 @@
             document.getElementById('admin-modal').classList.add('hidden');
         }
 
-        /* GUARDAR OFERTA FLASH EN LA NUBE (FIREBASE STORAGE + FIRESTORE) */
+        /* GUARDAR OFERTA FLASH EN LA NUBE (SUBIDA A IMGBB + FIRESTORE) */
         async function saveAdminOffer(e) {
             e.preventDefault();
             
-            if (!db || !storage) {
-                alert("⚠️ Ocurrió un inconveniente conectando con Firebase.");
+            if (!db) {
+                alert("⚠️ Ocurrió un inconveniente conectando con Firestore.");
                 return;
             }
 
@@ -576,17 +576,27 @@
                 const timer = document.getElementById('admin-timer').value.trim();
                 const text = document.getElementById('admin-text').value.trim();
 
-                let finalImgUrl = urlInput || 'oferta-flash.jpg';
+                let finalImgUrl = urlInput || '*.jpg';
 
-                // Si se seleccionó un archivo de foto local
+                // Si se seleccionó una imagen desde la PC o celular, se sube a ImgBB
                 if (fileInput.files && fileInput.files[0]) {
-                    const file = fileInput.files[0];
-                    const storageRef = storage.ref(`flash-offers/${Date.now()}_${file.name}`);
-                    const snapshot = await storageRef.put(file);
-                    finalImgUrl = await snapshot.ref.getDownloadURL();
+                    const formData = new FormData();
+                    formData.append('image', fileInput.files[0]);
+
+                    const response = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    const data = await response.json();
+                    if (data.success) {
+                        finalImgUrl = data.data.url;
+                    } else {
+                        throw new Error(data.error?.message || 'Error al subir la imagen a ImgBB.');
+                    }
                 }
 
-                // Guardar datos centralizados
+                // Guardar los datos centralizados en Firestore
                 await db.collection('settings').doc('flashOffer').set({
                     img: finalImgUrl,
                     badge: badge || '¡OFERTA FLASH!',
@@ -597,7 +607,7 @@
                 closeAdminModal();
                 alert('🚀 ¡Oferta Flash actualizada en vivo para todos los usuarios!');
             } catch (error) {
-                console.error('Error guardando oferta en Firebase:', error);
+                console.error('Error al guardar la oferta:', error);
                 alert('❌ Error al guardar en la nube: ' + error.message);
             } finally {
                 submitBtn.innerHTML = originalText;
