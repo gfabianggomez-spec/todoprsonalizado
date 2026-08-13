@@ -4,7 +4,32 @@
     <meta charset="UTF-8"> 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Todo Personalizado - Sublimación &amp; Grabado Láser</title>         
-    
+
+    <meta name="description" content="Sublimación y grabado láser en Cruz del Eje: termos, mates, remeras, gorras y regalos corporativos personalizados. Retiro en Alsina 52.">
+    <meta property="og:title" content="Todo Personalizado - Sublimación & Grabado Láser">
+    <meta property="og:description" content="Personalizamos termos, mates y vasos térmicos con grabado láser, e indumentaria con sublimación full color. Cruz del Eje, Córdoba.">
+    <meta property="og:image" content="https://todopersonalizado.cdeje.com.ar/IMG-20260731-WA0095%20(1).png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://todopersonalizado.cdeje.com.ar/">
+    <meta name="twitter:card" content="summary_large_image">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Todo Personalizado",
+      "image": "https://todopersonalizado.cdeje.com.ar/IMG-20260731-WA0095%20(1).png",
+      "telephone": "+5493549430437",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Alsina 52",
+        "addressLocality": "Cruz del Eje",
+        "addressRegion": "Córdoba",
+        "addressCountry": "AR"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
@@ -51,30 +76,26 @@
 <body class="bg-slate-100 font-sans text-slate-800 antialiased selection:bg-brandOrange selection:text-white relative pb-24 lg:pb-10"> 
 
     <!-- 1. TOP BAR CON BOTÓN ADMIN CON CLAVE -->         
-    <div class="text-center px-3 py-2 font-semibold text-xs sm:text-sm text-white bg-brandOrange flex justify-between sm:justify-center items-center gap-2">
-        <span class="truncate">🚚 <strong>Envío GRATIS</strong> en compras elegibles</span>
-        <span class="hidden sm:inline">|</span>
-        <div class="flex items-center gap-2">
-            <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1 font-bold bg-black/20 px-2.5 py-1 rounded-lg text-xs shrink-0">
-                <i class="fa-solid fa-location-dot text-amber-300"></i> Alsina 52
-            </a>
-            <!-- Botón Admin protegido por clave para la Oferta Flash -->
-            <button onclick="openAdminModal()" class="hover:bg-black/30 bg-black/20 text-white font-bold px-2.5 py-1 rounded-lg text-xs flex items-center gap-1 shrink-0 transition" title="Administrar Oferta Flash">
-                <i class="fa-solid fa-lock text-amber-300"></i> Admin Flash
-            </button>
-        </div>
+    <div class="text-center px-3 py-2 font-semibold text-xs sm:text-sm text-white bg-brandOrange flex justify-between items-center gap-2">
+        <a href="https://www.google.com/maps/search/?api=1&query=Alsina+52,+Cruz+del+Eje,+C%C3%B3rdoba,+Argentina" target="_blank" class="hover:underline flex items-center gap-1.5 min-w-0">
+            <i class="fa-solid fa-location-dot text-amber-200 shrink-0"></i> <span class="truncate">Alsina 52, Cruz del Eje</span>
+        </a>
+        <!-- Botón Admin protegido por clave para la Oferta Flash: icono solo en mobile, con texto desde tablet -->
+        <button onclick="openAdminModal()" class="hover:bg-black/30 bg-black/20 text-white font-bold w-7 h-7 sm:w-auto sm:px-2.5 sm:py-1 rounded-lg text-xs flex items-center justify-center sm:gap-1 shrink-0 transition" title="Administrar Oferta Flash">
+            <i class="fa-solid fa-lock text-amber-300"></i> <span class="hidden sm:inline">Admin Flash</span>
+        </button>
     </div>         
 
     <!-- 2. HEADER -->         
-    <header class="bg-brandDark text-white sticky top-0 z-40 shadow-md border-b border-slate-800"> 
+    <header id="main-header" class="bg-brandDark text-white sticky top-0 z-40 shadow-md border-b border-slate-800"> 
         <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3"> 
             
             <!-- LOGO DEL NEGOCIO -->
-            <a href="index.html" class="flex items-center gap-3 shrink-0 group"> 
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 min-w-0 group"> 
                 <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-slate-900 border-2 border-brandOrange overflow-hidden shrink-0 flex items-center justify-center">
-                    <img src="IMG-20260731-WA0095 (1).png" alt="Logo Todo Personalizado" width="208" height="184" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">                
+                    <img src="logo-optimizado.webp" alt="Logo Todo Personalizado" width="208" height="184" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/100x100/0A1128/FF5A00?text=LOGO'">                
                 </div>
-                <span class="Estilo2 text-lg sm:text-2xl">Todo Personalizado</span>
+                <span class="Estilo2 text-base sm:text-2xl truncate">Todo Personalizado</span>
             </a>
 
             <!-- Menú Escritorio -->                 
@@ -82,16 +103,22 @@
                 <a href="index.html" class="text-brandOrange font-bold transition">Inicio</a> 
                 <a href="#galeria" class="hover:text-brandOrange transition">Trabajos Realizados</a>
                 <a href="#catalogo" class="hover:text-brandOrange transition">Catálogo</a> 
-                <a href="#ubicacion" class="hover:text-brandOrange transition">Ubicación</a> 
             </nav>                 
 
             <!-- Botón Carrito Mobile -->                 
-            <button onClick="toggleCart()" class="lg:hidden relative bg-brandOrange hover:bg-brandOrangeHover text-white px-4 py-2.5 rounded-xl font-extrabold text-sm flex items-center gap-2 shadow shrink-0">
+            <button onClick="toggleCart()" class="lg:hidden relative bg-brandOrange hover:bg-brandOrangeHover text-white px-3 sm:px-4 py-2.5 rounded-xl font-extrabold text-sm flex items-center gap-1.5 sm:gap-2 shadow shrink-0">
                 <i class="fa-solid fa-cart-shopping text-base"></i>
-                <span>Mi Pedido</span>
+                <span class="hidden sm:inline">Mi Pedido</span>
                 <span id="cart-count-badge-mobile" class="bg-white text-brandDark font-black text-xs px-2 py-0.5 rounded-full">0</span>
             </button>
         </div>             
+
+        <!-- Menú Mobile: mismo menú de arriba, en fila compacta con scroll horizontal -->
+        <nav class="md:hidden flex items-center gap-4 overflow-x-auto no-scrollbar px-4 pb-2 font-bold text-xs uppercase tracking-wider text-slate-300 border-t border-slate-800/60 pt-2">
+            <a href="index.html" class="text-brandOrange shrink-0">Inicio</a>
+            <a href="#galeria" class="hover:text-brandOrange transition shrink-0">Trabajos Realizados</a>
+            <a href="#catalogo" class="hover:text-brandOrange transition shrink-0">Catálogo</a>
+        </nav>
     </header>         
 
     <!-- LAYOUT PRINCIPAL RESPONSIVO -->
@@ -131,10 +158,10 @@
                         <div class="relative h-64 sm:h-72 w-full bg-slate-950 rounded-2xl overflow-hidden border-2 border-brandOrange shadow-[0_0_25px_rgba(255,90,0,0.3)] group flex items-center justify-center">
                             
                             <!-- FONDO AMBIENTAL DESENFOCADO -->
-                            <img id="flash-img-bg" src="oferta-flash.jpg" class="absolute inset-0 w-full h-full object-cover blur-md opacity-40 scale-110 pointer-events-none transition duration-700 group-hover:scale-125 group-hover:opacity-60" alt="">
+                            <img id="flash-img-bg" src="oferta-flash-optimizada.webp" class="absolute inset-0 w-full h-full object-cover blur-md opacity-40 scale-110 pointer-events-none transition duration-700 group-hover:scale-125 group-hover:opacity-60" alt="">
 
                             <!-- FOTO PRINCIPAL NÍTIDA COMPLETA -->
-                            <img id="flash-img" src="oferta-flash.jpg" alt="Oferta Flash Todo Personalizado" class="relative z-10 max-h-full max-w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x350/0A1128/FF5A00?text=%F0%9F%94%A5+OFERTA+FLASH+DEL+D%C3%81A'">
+                            <img id="flash-img" src="oferta-flash-optimizada.webp" alt="Oferta Flash Todo Personalizado" class="relative z-10 max-h-full max-w-full object-contain p-2 transition-transform duration-500 group-hover:scale-105 drop-shadow-2xl" onerror="this.onerror=null; this.src='https://placehold.co/600x350/0A1128/FF5A00?text=%F0%9F%94%A5+OFERTA+FLASH+DEL+D%C3%81A'">
                             
                             <!-- DEGRADADO DE BRILLO -->
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-black/30 z-10 pointer-events-none"></div>
@@ -206,7 +233,7 @@
                 <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="grabado laser.jpeg" alt="Termo Grabado Personalizado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Termo'">
+                            <img src="grabado laser.jpeg" alt="Termo Grabado Personalizado" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Termo'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Grabado en Acero</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Me%20interesa%20un%20grabado%20similar%20al%20de%20la%20galeria" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -216,7 +243,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="mate grabado.jpg" alt="Mate de Acero Grabado" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Mate'">
+                            <img src="mate grabado.jpg" alt="Mate de Acero Grabado" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Mate'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Mates Térmicos</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20un%20mate%20grabado" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -226,7 +253,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="image-0.jpg" alt="Indumentaria Sublimada" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Ropa'">
+                            <img src="image-0.jpg" alt="Indumentaria Sublimada" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Ropa'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Ropa &amp; Deportes</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20consultar%20por%20sublimado" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -236,7 +263,7 @@
 
                     <div class="bg-slate-50 rounded-xl p-3 border border-slate-200 flex flex-col justify-between group hover:border-brandOrange transition">
                         <div class="h-36 sm:h-44 bg-slate-200 rounded-lg overflow-hidden relative mb-2">
-                            <img src="images (5).jpeg" alt="Merchandising Institucional" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Empresas'">
+                            <img src="images (5).jpeg" alt="Merchandising Institucional" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/300x300/f1f5f9/0f172a?text=Empresas'">
                         </div>
                         <h4 class="font-extrabold text-sm text-slate-900 mb-1.5">Kits Empresariales</h4>
                         <a href="https://wa.me/5493549430437?text=Hola!%20Quiero%20presupuesto%20empresarial" target="whatsapp_chat" class="w-full bg-white border border-slate-300 text-slate-800 font-extrabold text-xs py-2 rounded-lg text-center flex items-center justify-center gap-1">
@@ -258,11 +285,11 @@
                     <!-- Buscador -->
                     <div class="relative w-full">
                         <i class="fa-solid fa-magnifying-glass absolute left-4 top-4 text-slate-400 text-sm"></i>
-                        <input type="text" id="search-input" oninput="filterProducts()" placeholder="Buscar producto (termo, mate, remera, llavero)..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:border-brandOrange transition">
+                        <input type="text" id="search-input" aria-label="Buscar producto" oninput="filterProducts()" placeholder="Buscar producto (termo, mate, remera, llavero)..." class="w-full pl-11 pr-4 py-3 bg-slate-50 border border-slate-300 rounded-xl text-sm font-semibold focus:outline-none focus:border-brandOrange transition">
                     </div>
 
-                    <!-- Botones de Filtro por Categoría -->
-                    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1" id="category-buttons">
+                    <!-- Botones de Filtro por Categoría (fija debajo del header al hacer scroll) -->
+                    <div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-2 px-1 -mx-1 sticky bg-white z-30 border-b border-slate-100" id="category-buttons">
                         <button onClick="setCategory('all', this)" class="cat-btn shrink-0 bg-brandDark text-white px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold shadow-sm">Todos</button>
                         <button onClick="setCategory('termos', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Termos &amp; Mates</button>
                         <button onClick="setCategory('textil', this)" class="cat-btn shrink-0 bg-slate-100 text-slate-700 hover:bg-slate-200 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold">Textil &amp; Deporte</button>
@@ -385,7 +412,7 @@
     <footer class="mt-12 text-slate-500 text-xs text-center max-w-7xl mx-auto px-4"> 
         <p class="font-bold text-slate-700 mb-1">Todo Personalizado - Grabado Láser &amp; Sublimación</p>
         <p>Alsina 52, Cruz del Eje | WhatsApp: +54 9 3549 43 0437</p>
-        <p class="mt-3 text-slate-400">&copy; 2026 Todos los derechos reservados.</p>
+        <p class="mt-3 text-slate-400">&copy; 2026 Todos los derechos reservados. · <button onclick="openAdminModal()" class="underline hover:text-slate-600">Admin</button></p>
     </footer>         
 
     <!-- CARRITO DESPLEGABLE EN MOBILE (Drawer) -->
@@ -483,7 +510,7 @@
         const ADMIN_PASS = "tp2305";
 
         /* CLAVE API DE IMGBB */
-        const IMGBB_API_KEY = "5f17f35c87006fa78329e3284351214a";
+        const IMGBB_API_KEY = "e90cacfd7578365bafa62f55c7525b2e";
 
         /* CONFIGURACIÓN DE FIREBASE (FIRESTORE) */
         const firebaseConfig = {
@@ -632,20 +659,76 @@
         /* ASISTENTE VIRTUAL LOCAL: SERGIO */
         const BOT_NAME = "Sergio";
 
+        const CATEGORY_KEYWORDS = {
+            termos: ['termo', 'termos', 'mate', 'mates', 'vaso', 'vasos', 'botella', 'chopp', 'matero'],
+            textil: ['remera', 'remeras', 'gorra', 'gorras', 'buzo', 'buzos', 'textil', 'ropa', 'indumentaria', 'deportiv'],
+            accesorios: ['llavero', 'llaveros', 'taza', 'tazas', 'accesorio', 'accesorios'],
+            corporativo: ['corporativo', 'empresa', 'empresarial', 'institucional', 'kit', 'ejecutivo', 'regalo de empresa']
+        };
+
+        function formatPrice(p) { return `$${p.price.toLocaleString('es-AR')}`; }
+
+        function formatProductList(list) {
+            return list.map(p => `• ${p.name} — ${formatPrice(p)}`).join('\n');
+        }
+
+        /* Busca coincidencias reales en el catálogo a partir de texto libre del usuario */
+        function findProductMatches(text) {
+            const q = text.toLowerCase();
+
+            // 1) Coincidencia directa por nombre de producto (o una palabra significativa del nombre)
+            let matches = products.filter(p => {
+                const name = p.name.toLowerCase();
+                if (q.includes(name)) return true;
+                return name.split(' ').some(w => w.length > 4 && q.includes(w));
+            });
+            if (matches.length) return matches;
+
+            // 2) Coincidencia por categoría/técnica (termos, textil, accesorios, corporativo)
+            for (const [cat, words] of Object.entries(CATEGORY_KEYWORDS)) {
+                if (words.some(w => q.includes(w))) {
+                    matches = matches.concat(products.filter(p => p.category === cat));
+                }
+            }
+            // 3) Coincidencia por técnica (sublimación vs. grabado láser), vía el badge de cada producto
+            if (!matches.length) {
+                if (/sublimac/.test(q)) matches = products.filter(p => /sublimac/i.test(p.badge));
+                if (/laser|láser|grabad/.test(q)) matches = matches.concat(products.filter(p => /grabado/i.test(p.badge)));
+            }
+            return [...new Set(matches)];
+        }
+
         function getSergioResponse(text) {
             const msg = text.toLowerCase().trim();
 
             if (msg.match(/\b(hola|buenas|buen dia|buenas tardes|buenas noches|che|que tal|holaa|que onda)\b/)) {
-                return { text: `¡Buenas! Soy ${BOT_NAME}. ¿En qué te doy una mano hoy, che?`, showWsp: false };
+                return { text: `¡Buenas! Soy ${BOT_NAME}. Puedo contarte precios y detalles de cualquier producto del catálogo. ¿Qué andás buscando?`, showWsp: false };
             }
-            if (msg.match(/\b(laser|láser|grabado|grabados|termo|termos|mate|mates|vaso|vasos|chopp|llavero|llaveros)\b/)) {
-                return { text: "Hacemos grabado láser en acero inoxidable de máxima precisión (termos, mates, vasos y llaveros). Se graba en 24 a 48 hs. ¿Querés encargar uno?", showWsp: true, wspTopic: "Consulta de grabado láser" };
+
+            // Preguntas sobre productos puntuales: busca primero en el catálogo real
+            const matches = findProductMatches(msg);
+            if (matches.length === 1) {
+                const p = matches[0];
+                return {
+                    text: `${p.name} — ${formatPrice(p)}\n${p.desc}\n(${p.badge})\n\n¿Te lo reservo o coordinamos por WhatsApp?`,
+                    showWsp: true,
+                    wspTopic: `Consulta por ${p.name}`
+                };
             }
-            if (msg.match(/\b(sublimacion|sublimado|remera|remeras|gorra|gorras|taza|tazas|buzo|buzos|ropa|indumentaria)\b/)) {
-                return { text: "Trabajamos sublimación full color en remeras deportivas, gorras, tazas y buzos con la imagen o logo que quieras. ¡De una!", showWsp: true, wspTopic: "Consulta de sublimación" };
+            if (matches.length > 1) {
+                const shown = matches.slice(0, 6);
+                const extra = matches.length > 6 ? `\n\n...y ${matches.length - 6} más en el catálogo de arriba.` : '';
+                return {
+                    text: `Esto tenemos en ese rubro:\n\n${formatProductList(shown)}${extra}\n\n¿Alguno te interesa?`,
+                    showWsp: true,
+                    wspTopic: `Consulta sobre: ${text}`
+                };
             }
+
             if (msg.match(/\b(precio|precios|cuanto sale|cuanto cuesta|valor|catalogo|lista|productos|costo)\b/)) {
-                return { text: "¡Má' vale! Tenés todos los precios acá arriba en la web, pero si querés una lista personalizada o presupuesto por cantidad, decime y lo vemos por WhatsApp.", showWsp: true, wspTopic: "Consulta de lista de precios y presupuestos" };
+                const min = Math.min(...products.map(p => p.price));
+                const max = Math.max(...products.map(p => p.price));
+                return { text: `Los precios van de $${min.toLocaleString('es-AR')} a $${max.toLocaleString('es-AR')} según el producto. Contame qué te interesa (termo, mate, remera, gorra...) y te tiro el precio exacto.`, showWsp: false };
             }
             if (msg.match(/\b(pago|pagar|tarjeta|transferencia|efectivo|cuotas|mercadopago|mercado pago)\b/)) {
                 return { text: "Aceptamos efectivo, transferencia bancaria y Mercado Pago. ¡De una! Decime qué te hace falta y te armamos la cuenta.", showWsp: false };
@@ -678,13 +761,13 @@
             const windowEl = document.getElementById('ai-chat-window');
             windowEl.classList.remove('hidden');
             windowEl.classList.add('flex');
-            
-            const prompt = topic === 'sublimacion' 
-                ? "Quiero consultar por sublimación de remeras o accesorios."
-                : "Quiero consultar por grabado láser en acero.";
-                
-            document.getElementById('ai-user-input').value = prompt;
-            sendAIMessage();
+
+            const list = topic === 'sublimacion'
+                ? products.filter(p => /sublimac/i.test(p.badge))
+                : products.filter(p => /grabado/i.test(p.badge));
+
+            const titulo = topic === 'sublimacion' ? 'sublimación full color' : 'grabado láser';
+            appendAIMessage('assistant', `¡Buenas! Esto es lo que tenemos en ${titulo}:\n\n${formatProductList(list)}\n\n¿Alguno te interesa o buscás algo puntual?`);
         }
 
         function handleKeyPress(e) { if (e.key === 'Enter') sendAIMessage(); }
@@ -757,7 +840,7 @@
             { id: 1, name: "Termo Acero Inoxidable 1L", category: "termos", badge: "Grabado Láser", price: 28500, desc: "Doble pared de acero térmico. Mantienen frío/calor 24hs.", image: "grabado laser.jpeg" },
             { id: 2, name: "Mate Térmico con Bombilla", category: "termos", badge: "Grabado Láser", price: 19500, desc: "Acero inoxidable calidad 304 con grabado indeleble.", image: "mate grabado.jpg" },
             { id: 3, name: "Vaso Térmico 500ml con Tapa", category: "termos", badge: "Grabado Láser", price: 16200, desc: "Tapa antiderrame ideal para vehículos y oficina.", image: "grabado laser.jpeg" },
-            { id: 4, name: "Botella Deportiva de Acero 750ml", category: "termos", badge: "Grabado Láser", price: 17800, desc: "Cierre hermético con pico deportivo.", image: "1000722353_42ca676fe5bd488f733a20abfa3fdb08-4_8_2026, 01_07_19.jpg?auto=format&fit=crop&w=400&q=80" },
+            { id: 4, name: "Botella Deportiva de Acero 750ml", category: "termos", badge: "Grabado Láser", price: 17800, desc: "Cierre hermético con pico deportivo.", image: "botella-deportiva-optimizada.jpg" },
             { id: 5, name: "Remera Deportiva Personalizada", category: "textil", badge: "Sublimación Full Color", price: 14800, desc: "Poliéster técnico respirable. Estampado ilimitado de logos.", image: "image-0.jpg" },
             { id: 6, name: "Gorra Trucker Personalizada", category: "textil", badge: "Sublimación", price: 8500, desc: "Frente blanco acolchado con red trasera respirable.", image: "images (3).jpeg" },
             { id: 7, name: "Buzo Canguro Sublimado", category: "textil", badge: "Sublimación Full", price: 29000, desc: "Friza deportiva con diseño exclusivo.", image: "image-0.jpg" },
@@ -774,7 +857,15 @@
         document.addEventListener('DOMContentLoaded', () => { 
             renderProducts(); 
             updateCartUI(); 
+            positionCategoryBar();
         });
+        window.addEventListener('resize', positionCategoryBar);
+
+        function positionCategoryBar() {
+            const header = document.getElementById('main-header');
+            const bar = document.getElementById('category-buttons');
+            if (header && bar) { bar.style.top = header.offsetHeight + 'px'; }
+        }
 
         function setCategory(cat, element) {
             currentCategory = cat;
@@ -806,7 +897,7 @@
                 <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200 shadow-sm hover:border-slate-300 transition flex flex-col justify-between group"> 
                     <div> 
                         <div class="h-48 sm:h-52 bg-white rounded-lg mb-3 overflow-hidden border border-slate-200 relative">
-                            <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x400/f1f5f9/0f172a?text=Producto'">
+                            <img src="${p.image}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.onerror=null; this.src='https://placehold.co/400x400/f1f5f9/0f172a?text=Producto'">
                             <span class="absolute top-2 left-2 bg-brandDark/90 text-white text-xs font-bold px-2 py-0.5 rounded border border-slate-700">${p.badge}</span>
                         </div>                             
                         <h3 class="font-extrabold text-sm sm:text-base text-slate-900 leading-snug mb-1.5">${p.name}</h3> 
@@ -834,7 +925,6 @@
             const exist = cart.find(item => item.id === id);
             if (exist) { exist.qty += 1; } else { cart.push({ ...product, qty: 1 }); }
             updateCartUI();
-            if (window.innerWidth < 1024) { toggleCart(true); }
         }
 
         function changeQty(id, delta) {
@@ -893,12 +983,20 @@
         function toggleCart(forceOpen = false) {
             const drawer = document.getElementById('cart-drawer');
             const backdrop = document.getElementById('cart-drawer-backdrop');
+            const aiButton = document.getElementById('ai-chat-button');
+            const aiWindow = document.getElementById('ai-chat-window');
             if (forceOpen || drawer.classList.contains('translate-x-full')) {
                 drawer.classList.remove('translate-x-full');
                 backdrop.classList.remove('hidden');
+                // Ocultamos el widget de Sergio mientras el carrito está abierto: en mobile
+                // el carrito ocupa todo el ancho y Sergio quedaba flotando encima del Total.
+                aiButton.classList.add('hidden');
+                aiWindow.classList.add('hidden');
+                aiWindow.classList.remove('flex');
             } else {
                 drawer.classList.add('translate-x-full');
                 backdrop.classList.add('hidden');
+                aiButton.classList.remove('hidden');
             }
         }
 
